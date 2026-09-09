@@ -11,7 +11,7 @@ No account needed to browse or apply (applications happen on the employer's site
 ## Search
 
 - Remote roles index: `https://remote.co/remote-jobs`
-- Category pages are useful, e.g. `https://remote.co/remote-jobs/developer`, `https://remote.co/remote-jobs/data-science` — pick categories matching `search.roles`.
+- Category pages are useful, e.g. `https://remote.co/remote-jobs/data-science`, `https://remote.co/remote-jobs/developer` — pick categories matching `search.roles` (Data Scientist, AI Engineer, ML Engineer).
 - Or use search: `https://remote.co/remote-jobs/search?search_keywords=<ROLE>`
 
 ## Qualify

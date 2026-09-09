@@ -1,27 +1,185 @@
 {
-  "_comment": "TEMPLATE — will be auto-filled from resume/Resume.pdf. Drop the PDF in resume/ and ask the agent to parse it.",
-  "full_name": "",
-  "email": "",
-  "phone": "",
-  "location": { "city": "", "country": "", "open_to_remote": true, "relocation": false },
-  "links": { "linkedin": "", "github": "", "portfolio": "" },
-  "seniority": "",
-  "years_experience": 0,
-  "current_title": "",
-  "skills": [],
-  "highlight": "",
+  "full_name": "Deepak Garg",
+  "email": "gargdeepak114@gmail.com",
+  "phone": "+91 7838630502",
+  "location": {
+    "city": "Hyderabad",
+    "country": "India",
+    "open_to_remote": true,
+    "relocation": false
+  },
+  "links": {
+    "linkedin": "https://linkedin.com/in/deepak-garg-in",
+    "github": "https://github.com/mrgarg-g1",
+    "portfolio": ""
+  },
+  "seniority": "Mid-level",
+  "years_experience": 4,
+  "current_title": "Data Scientist",
+  "skills": [
+    "Python",
+    "SQL",
+    "PySpark",
+    "Machine Learning",
+    "Deep Learning",
+    "Generative AI",
+    "LLMs",
+    "NLP",
+    "ETL",
+    "Data Modeling",
+    "Data Visualization",
+    "Pandas",
+    "NumPy",
+    "Scikit-learn",
+    "XGBoost",
+    "LightGBM",
+    "Random Forest",
+    "Hugging Face",
+    "LangChain",
+    "RAG",
+    "Agentic AI",
+    "MCP",
+    "N8N",
+    "Docker",
+    "Git",
+    "Linux",
+    "Selenium",
+    "Beautiful Soup",
+    "SQLAlchemy",
+    "Flask",
+    "Power BI",
+    "Tableau",
+    "Microsoft Fabric",
+    "Databricks",
+    "Azure ML",
+    "Azure Data Factory",
+    "Synapse",
+    "ADLS",
+    "AWS SageMaker",
+    "AWS S3",
+    "AWS Glue",
+    "AWS Bedrock",
+    "AWS Lambda",
+    "PostgreSQL",
+    "MySQL",
+    "Oracle",
+    "MongoDB",
+    "OpenSearch",
+    "SpaCy",
+    "NLTK",
+    "BERT",
+    "LLaMA",
+    "OpenCV",
+    "TensorFlow"
+  ],
+  "highlight": "Data Scientist with 4 years of experience shipping production ML on Databricks, Microsoft Fabric, and AWS — recommendation systems, MLOps, RAG/LLM apps, and decision dashboards used by business teams.",
   "experience": [
-    { "title": "", "company": "", "start": "", "end": "", "bullets": [] }
+    {
+      "title": "Data Scientist",
+      "company": "Syren Cloud (Databricks Partner)",
+      "start": "Jul 2025",
+      "end": "Present",
+      "location": "Remote / Hyderabad, India",
+      "bullets": [
+        "Building enterprise-scale ML systems across recommendation, MLOps automation, and analytics on Microsoft Fabric and Databricks.",
+        "Central Recommendation Engine (CRE): engineered predictive algorithms on multi-signal behavioral data for real-time personalization across global supply-chain markets.",
+        "MLOps UI Platform: architected an ML backend that abstracts training, versioning, and deployment into a low-code interface for non-ML teams.",
+        "Hybrid ML disaggregation pipeline: decomposed national KPIs into regional and SKU-level projections for supply planning.",
+        "TCMS: embedded lookalike models and autonomous KPI computation into production Power BI dashboards on Microsoft Fabric."
+      ]
+    },
+    {
+      "title": "Data Scientist & AI Engineer",
+      "company": "Appsquadz (AWS Partner)",
+      "start": "Jan 2025",
+      "end": "Jun 2025",
+      "location": "Noida, India",
+      "bullets": [
+        "Delivered end-to-end AI solutions across search, NLP, LLM fine-tuning, and analytics on AWS.",
+        "Semantic video search: transcript-aware retrieval on AWS Transcribe, OpenSearch, SageMaker, and Bedrock.",
+        "Waves OTT recommendation engine: hybrid collaborative filtering + metadata embeddings with cold-start fallback.",
+        "Mentor Policy Chatbot: fine-tuned LLaMA 3.1-8B-Instruct (LoRA/PEFT) and deployed a LangChain RAG pipeline.",
+        "Enterprise document intelligence: transformer NLP for moderation, classification, and summarization with Bhashini and Cloud Vision OCR.",
+        "Churn and sentiment analytics: ensemble churn model at 85% accuracy plus real-time speech sentiment pipelines."
+      ]
+    },
+    {
+      "title": "Data Analyst",
+      "company": "Areness",
+      "start": "Jun 2024",
+      "end": "Dec 2024",
+      "location": "Gurugram, India",
+      "bullets": [
+        "Owned end-to-end data pipeline and reporting for legal compliance and operational analytics.",
+        "Built fault-tolerant scraping and ingestion (Selenium, BeautifulSoup, SQLAlchemy, Great Expectations), cutting manual intervention by 90%.",
+        "Designed ETL with schema validation and quality gates for audit-ready legal/regulatory KPIs.",
+        "Delivered Power BI dashboards for legal operations, regulatory risk, and business performance."
+      ]
+    },
+    {
+      "title": "AI Engineer",
+      "company": "S.O. Infotech Pvt. Ltd. (Freelance)",
+      "start": "Jul 2023",
+      "end": "May 2024",
+      "location": "Hybrid",
+      "bullets": [
+        "Built NLP automation for legal document processing through production API integration.",
+        "BERT document classification on legal/insurance docs (PyMuPDF + regex) at 92% accuracy.",
+        "Domain-adapted SpaCy NER for parties, clauses, and dates, reducing manual review by 60%.",
+        "Packaged models as Flask REST APIs in the client's intake management system."
+      ]
+    },
+    {
+      "title": "AI Engineer",
+      "company": "Golden Metal Corporation",
+      "start": "Jun 2022",
+      "end": "Jun 2023",
+      "location": "Hybrid",
+      "bullets": [
+        "Demand forecasting with ARIMA and Prophet, improving procurement efficiency by 20%.",
+        "Real-time facial recognition attendance with OpenCV and TensorFlow.",
+        "Inventory and supplier dashboards in Power BI and Streamlit.",
+        "Automated weekly reporting via Python scheduling and email, saving ~5 hours/week."
+      ]
+    }
   ],
   "education": [
-    { "degree": "", "institution": "", "year": "" }
+    {
+      "degree": "Master of Computer Application (MCA), Data Science — 9.1 CGPA",
+      "institution": "Bennett University, Greater Noida",
+      "year": "2025"
+    },
+    {
+      "degree": "Bachelor of Computer Application (BCA), Data Science — 8.5 CGPA",
+      "institution": "J.C. Bose University of Science and Technology, Faridabad",
+      "year": "2023"
+    }
   ],
   "screening_answers": {
-    "work_authorization": "",
+    "work_authorization": "Authorized to work in India",
     "requires_sponsorship": "",
     "notice_period": "",
     "expected_salary": "",
     "willing_to_relocate": "No"
   },
-  "extras": {}
+  "extras": {
+    "publications": [
+      "Reactive to Agentic: Next Gen AI Agent Transition Framework — IEEE ICAICCIT 2025",
+      "Generative AI in Healthcare — book chapter, ISBN 9781032784847, 2025",
+      "Leveraging Financial Data and Risk Management in the Banking Sector using Machine Learning — IEEE I2CT 2024",
+      "Comparative Analysis of Machine Learning Algorithms in Parkinson Disease Diagnosis — IEEE ICACRS 2024"
+    ],
+    "certifications": [
+      "Python-AI (DUCAT, A+)",
+      "C and C++ (Haryana State Council ITEC)",
+      "Crash Course on Python (Google)",
+      "Data Analysis with Python (IBM)",
+      "Harnessing the Power of Data with Power BI (IBM)",
+      "Data Analytics with Excel Pivot Tables (Microsoft)",
+      "Extract, Transform, and Load Data in Power BI (Microsoft)",
+      "Linux Fundamentals (LearnQuest)",
+      "Data Mining Methods (University of Colorado Boulder)",
+      "Data Analytics Methods for Marketing (META)"
+    ]
+  }
 }
