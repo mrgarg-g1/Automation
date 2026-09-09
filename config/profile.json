@@ -6,7 +6,8 @@
     "city": "Hyderabad",
     "country": "India",
     "open_to_remote": true,
-    "relocation": false
+    "relocation": false,
+    "hybrid_ok_cities": ["Gurugram", "Gurgaon", "Noida", "Delhi", "New Delhi", "NCR", "Delhi NCR"]
   },
   "links": {
     "linkedin": "https://linkedin.com/in/deepak-garg-in",
@@ -160,9 +161,10 @@
     "requires_sponsorship": "",
     "notice_period": "",
     "expected_salary": "",
-    "willing_to_relocate": "No"
+    "willing_to_relocate": "No — hybrid only in Gurugram / Noida / Delhi"
   },
   "extras": {
+    "otp_handoff": "If a platform asks for email OTP, captcha, or 2FA, pause and ask the user; they will share the code. Do not mark blocked on the first OTP.",
     "publications": [
       "Reactive to Agentic: Next Gen AI Agent Transition Framework — IEEE ICAICCIT 2025",
       "Generative AI in Healthcare — book chapter, ISBN 9781032784847, 2025",

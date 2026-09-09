@@ -25,6 +25,8 @@ https://www.ziprecruiter.com/jobs-search?search=<ROLE>&location=<LOCATION_OR_Rem
 
 - One search per role in `search.roles` (stop that role's listing when its platform cap share is met).
 - Sort by date when the sort control exists.
+- Fully remote US/global listings are OK. Hybrid/onsite: only Gurugram, Noida, Delhi — skip US-city hybrid.
+- Email OTP: pause and ask the user for the code (they will share it); do not abandon the platform on the first OTP.
 
 ## Qualify
 
