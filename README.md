@@ -5,7 +5,7 @@ A robust, resume-driven job application system for **Cursor Automations**. Playb
 ## How it works
 
 ```
-Resume.pdf ──► config/profile.json ──► RUNBOOK.md (master agent brain)
+resume/Resume.pdf ──► config/profile.json ──► RUNBOOK.md (master agent brain)
                                             │
                     ┌───────────────────────┼────────────────────────┐
                     ▼                       ▼                        ▼
@@ -25,7 +25,8 @@ Each run, the Cursor agent:
 | Path | Purpose |
 |------|---------|
 | `RUNBOOK.md` | Master instructions the agent follows every run |
-| `config/profile.json` | Your structured resume data (auto-built from Resume.pdf) |
+| `resume/Resume.pdf` | Canonical PDF attached on applications |
+| `config/profile.json` | Structured resume data used for forms and fit scoring |
 | `config/settings.json` | Platforms, daily caps, search queries, fit threshold |
 | `config/credentials.env` | Email/password (local only — gitignored, never commit) |
 | `config/credentials.env.example` | Key names to copy into Cursor Cloud Agent Secrets |
@@ -37,7 +38,7 @@ Each run, the Cursor agent:
 
 ## Quick start
 
-1. Drop `Resume.pdf` into `resume/` and tell the agent — it builds `config/profile.json`.
+1. Resume lives at `resume/Resume.pdf`; `config/profile.json` is already filled from it.
 2. Fill in `config/credentials.env` (one master email+password; reused per platform unless overridden).
 3. Say **"run the job automation"** (or `run ziprecruiter only`, `dry run`, etc.).
 4. Complete any captcha/email-verification prompts when the agent hands off to you.

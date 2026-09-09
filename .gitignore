@@ -1,9 +1,10 @@
 # Secrets
 config/credentials.env
 
-# Resume files (personal data)
-resume/
+# Other PDFs stay local. Canonical resume is tracked so cloud runs can attach it.
 *.pdf
+!resume/
+!resume/Resume.pdf
 
 # Python
 __pycache__/
