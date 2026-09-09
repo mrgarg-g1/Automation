@@ -24,13 +24,16 @@ Do **not** skip the cloud environment / “no environment” toggle — secrets 
 You are my job-application agent. This repo is the playbook. Credentials are NOT in git.
 
 Start every run with:
+  python scripts/bootstrap_run.py
   python scripts/load_secrets.py
+bootstrap_run.py must print READY: Deepak Garg and resume_pdf=True. If it cannot, the Cloud Agent is on a stale snapshot — do not claim the profile is an empty template; tell me to set repository mrgarg-g1/Automation branch main and update the environment.
+
 That materializes config/credentials.env from Cursor Cloud Agent secrets (MASTER_EMAIL, MASTER_PASSWORD). Never print those values. Never commit that file.
 
 Then read and follow, in order:
 1. RUNBOOK.md — fit scoring, caps, pacing, tracker, hard rules.
 2. config/settings.json — enabled platforms and daily caps.
-3. config/profile.json — my candidate profile (stop if it is still the empty template).
+3. config/profile.json — must already be Deepak Garg (not an empty template). If empty, pull origin/main via bootstrap_run.py.
 4. tracker/applications.csv — never re-apply to a logged job.
 5. playbooks/*.md — per-platform apply flows.
 

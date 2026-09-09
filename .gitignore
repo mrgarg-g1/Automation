@@ -1,10 +1,6 @@
-# Secrets
+# Secrets only — do not ignore resume/ or PDFs. Cursor cloud checkouts
+# omit gitignored paths, which previously dropped resume/Resume.pdf.
 config/credentials.env
-
-# Other PDFs stay local. Canonical resume is tracked so cloud runs can attach it.
-*.pdf
-!resume/
-!resume/Resume.pdf
 
 # Python
 __pycache__/
