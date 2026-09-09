@@ -6,6 +6,7 @@
     "city": "Hyderabad",
     "country": "India",
     "open_to_remote": true,
+    "remote_worldwide": true,
     "relocation": false,
     "hybrid_ok_cities": ["Gurugram", "Gurgaon", "Noida", "Delhi", "New Delhi", "NCR", "Delhi NCR"]
   },
