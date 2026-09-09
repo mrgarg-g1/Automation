@@ -1,6 +1,6 @@
 # Job Application Automation (Cursor-native)
 
-A robust, resume-driven job application system that runs on **Cursor's browser agent** — no Apify, no external bots. Hybrid mode: supervised local runs for signups/OAuth/captcha, plus a scheduled cloud Automation for daily applying once accounts exist.
+A robust, resume-driven job application system for **Cursor Automations**. Playbooks live in this GitHub repo. Job-site passwords live in Cursor Cloud Agent Secrets. Apify stays connected on the automation (not in git).
 
 ## How it works
 
@@ -15,7 +15,7 @@ Resume.pdf ──► config/profile.json ──► RUNBOOK.md (master agent brai
 
 Each run, the Cursor agent:
 1. Loads your profile + settings.
-2. Picks platforms in rotation, logs in (or signs up with email+password from `config/credentials.env`).
+2. Loads credentials (`scripts/load_secrets.py` from Cloud Agent secrets, or local `config/credentials.env`), then logs in or signs up.
 3. Searches with your role/location/remote filters, scores each job against your resume (fit rubric in `RUNBOOK.md`).
 4. Applies only to jobs above the fit threshold, with human-like pacing and a daily cap.
 5. Logs everything to the tracker and prints a run summary.
@@ -27,11 +27,13 @@ Each run, the Cursor agent:
 | `RUNBOOK.md` | Master instructions the agent follows every run |
 | `config/profile.json` | Your structured resume data (auto-built from Resume.pdf) |
 | `config/settings.json` | Platforms, daily caps, search queries, fit threshold |
-| `config/credentials.env` | Email/password per platform (local only — never commit) |
+| `config/credentials.env` | Email/password (local only — gitignored, never commit) |
+| `config/credentials.env.example` | Key names to copy into Cursor Cloud Agent Secrets |
 | `playbooks/` | Step-by-step application flows per platform |
 | `tracker/applications.csv` | Every application attempt + status |
+| `scripts/load_secrets.py` | Writes credentials.env from Cloud Agent env vars |
 | `scripts/tracker.py` | CLI to add/query/export tracker rows |
-| `automations/daily-apply.md` | Prompt draft for the scheduled Cursor cloud Automation |
+| `automations/daily-apply.md` | Prompt + credential wiring for the scheduled Cursor Automation |
 
 ## Quick start
 

@@ -1,42 +1,43 @@
-# Scheduled Cursor Automation — daily job applying (hybrid mode)
+# Scheduled Cursor Automation — daily job applying
 
-**When to create this:** only after a supervised local run has (a) created + verified accounts on the target platforms and (b) completed at least one successful application. Cloud agents cannot do first-time OAuth/captcha/email-verification — those must be done locally first.
+Cloud runs check out this GitHub repo. Playbooks live in git. **Passwords do not.**
 
-## How to create
+## Credentials (this is the important part)
 
-Ask in the Agents Window: *"Create a Cursor Automation from automations/daily-apply.md"*. The automate skill will walk you through a draft table, then open the Automations editor.
+| What | Where it lives | How the agent gets it |
+|------|----------------|------------------------|
+| Playbooks, settings, tracker | This GitHub repo | Automation **Select repository** → `mrgarg-g1/Automation` |
+| ZipRecruiter / Instahyre email+password | Cursor **Cloud Agent Secrets** | Injected as env vars; `python scripts/load_secrets.py` writes `credentials.env` at run start |
+| Apify API token | Automation **Tools → Apify** (already connected) | Agent calls the connected Apify tool; token is not in git |
 
-## Draft
+Add secrets at [cursor.com/dashboard/cloud-agents](https://cursor.com/dashboard/cloud-agents) as **Runtime Secrets** (so values stay out of the transcript):
 
-| Field | Value |
-|-------|-------|
-| Name | Daily job application run |
-| Description | Searches enabled job platforms, scores listings against my resume, applies to good fits within daily caps, and logs everything to the tracker. |
-| Trigger | On a schedule — every day at 09:00 (`cron: 0 9 * * *`; adjust timezone in the editor) |
-| Tools | None required beyond default shell/browser-free environment |
-| Instructions | See prompt below |
+- `MASTER_EMAIL`
+- `MASTER_PASSWORD`
+- optional per-platform overrides matching `config/credentials.env.example`
 
-## Prompt (paste into the automation's instructions)
+Do **not** skip the cloud environment / “no environment” toggle — secrets are not injected in that mode.
+
+## Agent instructions (paste into the Automations editor)
 
 ```
-You are my job-application agent. This repo contains the full system — read these files first and follow them exactly:
+You are my job-application agent. This repo is the playbook. Credentials are NOT in git.
 
-1. RUNBOOK.md — master rules: run modes, fit scoring, pacing, caps, tracker logging, hard rules.
-2. config/settings.json — enabled platforms, caps, search roles, fit threshold.
-3. config/profile.json — my candidate profile.
-4. config/credentials.env — login email/passwords (never echo these anywhere).
-5. tracker/applications.csv — history; never re-apply to anything already logged.
-6. playbooks/*.md — per-platform application flows.
+Start every run with:
+  python scripts/load_secrets.py
+That materializes config/credentials.env from Cursor Cloud Agent secrets (MASTER_EMAIL, MASTER_PASSWORD). Never print those values. Never commit that file.
 
-Then perform a standard daily run in dry-safe order:
-- For each enabled platform in settings order, search per its playbook, score jobs per RUNBOOK §4, and apply only to jobs scoring >= the fit threshold, respecting per-platform and total daily caps and the 45–120s randomized pacing delay.
-- If a platform demands login interaction you cannot complete non-interactively (captcha, OTP, email verification), mark it blocked in the tracker and continue with the next platform.
-- Log every attempt with: python scripts/tracker.py add ...
-- Finish with the RUNBOOK §7 end-of-run report as your final message.
+Then read and follow, in order:
+1. RUNBOOK.md — fit scoring, caps, pacing, tracker, hard rules.
+2. config/settings.json — enabled platforms and daily caps.
+3. config/profile.json — my candidate profile (stop if it is still the empty template).
+4. tracker/applications.csv — never re-apply to a logged job.
+5. playbooks/*.md — per-platform apply flows.
+
+Use the connected Apify tool for job search and apply actors (same pattern as Claude + Apify). Apify auth is the connected tool, not a file in this repo.
+
+For each enabled platform: search, score (>= fit_threshold), apply within caps, 45–120s delay between applications. If a site needs captcha / email OTP / payment, log blocked and continue. Log every attempt with:
+  python scripts/tracker.py add --platform ... --title ... --company ... --url ... --status ... --score ...
+
+Finish with the RUNBOOK §7 end-of-run report.
 ```
-
-## Deferred to the editor
-
-- Final schedule/timezone confirmation.
-- Cloud compute size (default is fine).
-- **Caveat:** credentials.env must be present in the repo/branch the automation checks out, or the run will stop at login. If you'd rather not commit credentials, keep the automation disabled and run locally instead — local runs read the file from your working tree.

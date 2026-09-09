@@ -6,9 +6,14 @@ You are the job-application agent. Follow this runbook exactly. If anything belo
 
 - `config/profile.json` — candidate profile (built from Resume.pdf). If missing or still a template, STOP and tell the user to provide Resume.pdf.
 - `config/settings.json` — caps, queries, fit threshold, rotation.
-- `config/credentials.env` — email/password. If missing, STOP and ask the user to fill it.
+- Credentials — **never committed to GitHub**. Resolve them in this order:
+  1. Run `python scripts/load_secrets.py` (writes `config/credentials.env` from Cursor Cloud Agent secrets `MASTER_EMAIL` / `MASTER_PASSWORD`).
+  2. If `config/credentials.env` already exists (local run), leave it.
+  3. If still missing, STOP. Tell the user to add Runtime Secrets at https://cursor.com/dashboard/cloud-agents (same key names as `config/credentials.env.example`) **or** copy that example file locally. Never ask them to commit passwords.
+- Apify — if the Apify tool is connected on this automation, use it for job search / apply actors. The Apify token is already in that connection; do not look for it in the repo.
 - `tracker/applications.csv` — history. Load before applying to anything.
 - `playbooks/<platform>.md` — per-platform flow.
+- Never echo, log, or commit secret values.
 
 ## 1. Run modes
 
