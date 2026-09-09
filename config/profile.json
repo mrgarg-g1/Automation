@@ -1,0 +1,27 @@
+{
+  "_comment": "TEMPLATE — will be auto-filled from resume/Resume.pdf. Drop the PDF in resume/ and ask the agent to parse it.",
+  "full_name": "",
+  "email": "",
+  "phone": "",
+  "location": { "city": "", "country": "", "open_to_remote": true, "relocation": false },
+  "links": { "linkedin": "", "github": "", "portfolio": "" },
+  "seniority": "",
+  "years_experience": 0,
+  "current_title": "",
+  "skills": [],
+  "highlight": "",
+  "experience": [
+    { "title": "", "company": "", "start": "", "end": "", "bullets": [] }
+  ],
+  "education": [
+    { "degree": "", "institution": "", "year": "" }
+  ],
+  "screening_answers": {
+    "work_authorization": "",
+    "requires_sponsorship": "",
+    "notice_period": "",
+    "expected_salary": "",
+    "willing_to_relocate": "No"
+  },
+  "extras": {}
+}

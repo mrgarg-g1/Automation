@@ -1,0 +1,54 @@
+{
+  "daily_cap_total": 30,
+  "fit_threshold": 60,
+  "delay_seconds_between_applications": [45, 120],
+  "pause_every_n_applications": 5,
+  "pause_minutes": [3, 5],
+  "platforms": [
+    {
+      "name": "ziprecruiter",
+      "enabled": true,
+      "daily_cap": 15,
+      "playbook": "playbooks/ziprecruiter.md"
+    },
+    {
+      "name": "remote_co",
+      "enabled": true,
+      "daily_cap": 8,
+      "playbook": "playbooks/remote-co.md",
+      "note": "Most listings redirect to company ATS pages — hand off to playbooks/ats-direct.md"
+    },
+    {
+      "name": "instahyre",
+      "enabled": true,
+      "daily_cap": 8,
+      "playbook": "playbooks/instahyre.md"
+    },
+    {
+      "name": "flexjobs",
+      "enabled": false,
+      "daily_cap": 5,
+      "playbook": "playbooks/flexjobs.md",
+      "note": "DISABLED by default: FlexJobs requires a paid subscription to apply. Enable only after subscribing."
+    },
+    {
+      "name": "protocol_jobs",
+      "enabled": true,
+      "daily_cap": 5,
+      "playbook": "playbooks/protocol-jobs.md"
+    }
+  ],
+  "search": {
+    "roles": [
+      "Data Engineer",
+      "Software Engineer",
+      "Backend Engineer",
+      "Machine Learning Engineer"
+    ],
+    "locations": ["Remote"],
+    "remote_only": true,
+    "posted_within_days": 7,
+    "exclude_keywords": ["clearance", "citizen only", "onsite only"],
+    "exclude_if_required": []
+  }
+}

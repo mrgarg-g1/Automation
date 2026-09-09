@@ -1,0 +1,21 @@
+# Secrets
+config/credentials.env
+
+# Resume files (personal data)
+resume/
+*.pdf
+
+# Python
+__pycache__/
+*.pyc
+.venv/
+venv/
+
+# OS / editor
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
+
+# Tracker local copies
+tracker/export.csv
