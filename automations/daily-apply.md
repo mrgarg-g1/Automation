@@ -38,7 +38,7 @@ Then read and follow, in order:
 4. tracker/applications.csv — never re-apply to a logged job.
 5. playbooks/*.md — per-platform apply flows.
 
-Use the connected Apify tool for job search and apply actors (same pattern as Claude + Apify). Apify auth is the connected tool, not a file in this repo.
+Use the connected Apify tool for job search. Use connected Gmail / Updates for OTPs. Do not launch Claude or other third-party models.
 
 For each enabled platform: search, score (>= fit_threshold), apply within caps, 45–120s delay between applications.
 
