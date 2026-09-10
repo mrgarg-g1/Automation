@@ -71,3 +71,6 @@ date,platform,title,company,url,status,score,notes
 2026-09-10T07:18:28,remote_co,Machine Learning Engineer II (Applied Research & Model Development),PathAI,https://job-boards.greenhouse.io/pathai/jobs/8696752002,needs_user_action,80.0,unanswered_screening_sponsorship
 2026-09-10T07:18:28,protocol_jobs,Protocol Labs DS/ML search,Protocol Labs,https://protocol.ai/join/,failed,0.0,no_live_ds_ml_postings greenhouse_404
 2026-09-10T08:01:46,remote_co,Machine Learning Engineer,Coinbase,https://job-boards.greenhouse.io/coinbase/jobs/7985187,applied,85.0,ats_greenhouse otp_from_gmail confirmation_email Remote_India
+2026-09-10T08:17:19,protocol_jobs,Machine Learning Engineer,Jobgether,https://jobs.lever.co/jobgether/d5ccb68f-a15c-43d7-a381-05cfced69df3,blocked,80.0,captcha_skipped_by_user lever_hcaptcha
+2026-09-10T08:17:19,protocol_jobs,Finance AI Data Scientist,Binance,https://jobs.lever.co/binance/3c553d93-1746-4e78-b6eb-b82bff5cc801,blocked,60.0,captcha_skipped_by_user lever_hcaptcha
+2026-09-10T08:17:19,remote_co,AI Engineer,GitLab,https://job-boards.greenhouse.io/gitlab/jobs/8556658002,blocked,80.0,Remote_Bangalore greenhouse_cdp phone_country_validation recaptcha_present

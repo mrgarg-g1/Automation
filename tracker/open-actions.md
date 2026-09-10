@@ -2,20 +2,10 @@
 
 Clear a row only after the user confirms they completed it **or** a later run submits successfully and logs `applied`.
 
-## Captcha — ACTION NEEDED NOW (do not solve; forms are already filled)
+## Skip (user 2026-09-10)
 
-User will solve captcha only — not job forms. Chrome is on `DISPLAY=:1` with both Lever applies filled + resume attached.
-
-| Job | Company | URL | What |
-|---|---|---|---|
-| Machine Learning Engineer | Jobgether | https://jobs.lever.co/jobgether/d5ccb68f-a15c-43d7-a381-05cfced69df3/apply | hCaptcha picture puzzle; name/email/phone/location/company + Resume.pdf filled |
-| Finance AI Data Scientist | Binance | https://jobs.lever.co/binance/3c553d93-1746-4e78-b6eb-b82bff5cc801/apply | hCaptcha picture puzzle; form + LinkedIn URL + Resume.pdf filled |
-
-After captcha: expect Lever confirmation page, then `tracker.py add --status applied`.
-
-## Skip (user 2026-09-10): Naukri and LinkedIn
-
-Do **not** apply on Naukri or LinkedIn — user already applied there. Same for Hirist/Naukri easy-apply tabs left over from discovery. Use Greenhouse / Lever / Ashby / Instahyre / other ATS instead.
+- **Naukri and LinkedIn** — already applied; do not apply there (also skip Hirist leftovers).
+- **Jobgether Lever MLE** `d5ccb68f` and **Binance Lever Finance AI DS** `3c553d93` — user said skip the open captchas. Logged `blocked` / `captcha_skipped_by_user`. Do not wait on those tabs. Prefer Greenhouse HTTP (no picture captcha).
 
 ## Email OTP — next run: fill from Gmail read tool (`playbooks/gmail-otp.md`)
 
@@ -32,7 +22,7 @@ Set `profile.screening_answers.requires_sponsorship` (Yes/No). Until then skip *
 | Machine Learning Engineer | Twilio | https://job-boards.greenhouse.io/twilio/jobs/7702644 |
 | Machine Learning Engineer II | PathAI | https://job-boards.greenhouse.io/pathai/jobs/8696752002 |
 
-India-located roles (e.g. Coinbase Remote India): answer from `work_authorization` = authorized in India; do not treat as the empty US-sponsorship field.
+India-located roles: answer from `work_authorization` = authorized in India.
 
 ## Next Instahyre (cap currently 8/8 — apply after reset)
 
@@ -46,10 +36,15 @@ India-located roles (e.g. Coinbase Remote India): answer from `work_authorizatio
 
 Skip already-applied Instahyre: SYDIAI, DataNimbus, Commotion, Telomere, FourKites, Nablon, Kahuna, Zynix.
 
+## Next ATS (Greenhouse HTTP — no Lever captcha)
+
+Live India-remote / NCR mid DS-ML still open after today's applies: GitLab AI Engineer `8556658002` Remote Bangalore (blocked this run: phone-country widget + recaptcha). OpenAI Applied AI Engineer Delhi Ashby `bf036b23` (posted 2026-08-03, older than 7d). Coinbase Senior MLE India `7739592` is Senior vs 4 YOE — skip. No other highmetric India DS/ML besides already-applied NewRocket roles.
+
 ## Cleared this run
 
-- NewRocket AI/ML Developer `6148059004` — applied (Greenhouse confirmation page; otp_from_gmail).
-- NewRocket Senior AI/ML FDE `6161076004` — already applied (thank-you email 2026-09-09).
-- Databricks AI Engineer FDE `8099751002` — already applied (thank-you email 2026-09-10).
-- Moniepoint DS Fraud `4921127101` — already applied (thank-you email).
-- Coinbase Machine Learning Engineer `7985187` Remote India — applied 2026-09-10 (Greenhouse HTTP + otp_from_gmail; confirmation email).
+- NewRocket AI/ML Developer `6148059004` — applied.
+- NewRocket Senior AI/ML FDE `6161076004` — already applied.
+- Databricks AI Engineer FDE `8099751002` — already applied.
+- Moniepoint DS Fraud `4921127101` — already applied.
+- Coinbase Machine Learning Engineer `7985187` Remote India — applied (confirmation email).
+- Jobgether MLE + Binance Finance AI DS — skipped by user (captcha).
