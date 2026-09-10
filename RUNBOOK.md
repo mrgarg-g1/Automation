@@ -42,7 +42,7 @@ python scripts/load_secrets.py
 
 1. Try login with `credentials.env` email+password for that platform.
 2. If no account exists → follow the playbook's **Signup** section: register with email+password from `credentials.env` (platform-specific password if present, else the master password).
-3. If the platform forces OAuth-only or a verification step (email link, OTP, captcha, 2FA): pause, clearly tell the user what to complete, and wait. Retry once after they confirm. If still blocked → mark `BLOCKED`, continue rotation.
+3. If the platform forces OAuth-only or a verification step (email link, OTP, captcha, 2FA): **pause and ask the user for the code** (they will share OTP). Wait for it, then retry. Only mark `BLOCKED` if they cannot provide it or a second attempt still fails.
 4. Never invent personal data. Every form value comes from `profile.json`. If a required field has no value, ask the user once and remember the answer in `profile.json → extras`.
 
 ## 4. Job discovery & fit scoring
@@ -60,6 +60,8 @@ For each platform, run the playbook's search URLs (built from `settings.json →
 | Requires skill marked `exclude_if_required` in settings | −40 |
 | Seniority mismatch (e.g. "10+ years" for junior profile) | −30 |
 | Location requires relocation and profile says remote-only | −25 |
+
+Location match means: **fully remote / WFH worldwide** (including outside India), or **hybrid/onsite in Gurugram, Noida, or Delhi (NCR) only**. Hybrid or onsite anywhere else (US office days, Bangalore, Hyderabad office, Chennai office, etc.) does **not** get location points and should be skipped unless the listing is also fully remote.
 
 Apply only when **score ≥ settings.fit_threshold** (default 60) **and** the job is not already in the tracker (match on job URL, else normalized title+company). Keep a shortlist in the run summary: title, company, score, applied/skipped reason.
 

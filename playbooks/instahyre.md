@@ -21,6 +21,9 @@ India-focused platform; employers also post remote-global roles. Applications ar
 
 ```
 https://www.instahyre.com/job-search/?q=<ROLE>&location=Remote
+https://www.instahyre.com/job-search/?q=<ROLE>&location=Delhi
+https://www.instahyre.com/job-search/?q=<ROLE>&location=Gurgaon
+https://www.instahyre.com/job-search/?q=<ROLE>&location=Noida
 ```
 
 Also check the "Remote" filter chip. Sort by relevance/date if offered.
@@ -28,6 +31,8 @@ Also check the "Remote" filter chip. Sort by relevance/date if offered.
 ## Qualify
 
 Standard RUNBOOK §4 scoring. Instahyre shows salary bands and "remote" tags on cards — use them. Skip roles requiring immediate joining if `profile.screening_answers.notice_period` is long.
+
+**Location rule:** apply to Work From Home / Remote anywhere. For hybrid or office roles, apply **only** if the city is Gurugram/Gurgaon, Noida, or Delhi. Skip hybrid/onsite in Bangalore, Chennai, Hyderabad, Mumbai, Pune, or anywhere outside NCR.
 
 ## Apply
 
