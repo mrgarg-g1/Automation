@@ -74,6 +74,8 @@ For each platform, run the playbook's search URLs (built from `settings.json →
 | Seniority mismatch (e.g. "10+ years" for junior profile) | −30 |
 | Location requires relocation and profile says remote-only | −25 |
 
+Location match means: **fully remote / WFH worldwide** (including outside India), or **hybrid/onsite in Gurugram, Noida, or Delhi (NCR) only**. Hybrid or onsite anywhere else (US office days, Bangalore, Hyderabad office, Chennai office, etc.) does **not** get location points and should be skipped unless the listing is also fully remote.
+
 Apply only when **score ≥ settings.fit_threshold** (default 60) **and** the job is not already in the tracker (match on job URL, else normalized title+company). Keep a shortlist in the run summary: title, company, score, applied/skipped reason.
 
 ## 5. Applying
