@@ -50,7 +50,11 @@ Skip already-applied Instahyre: SYDIAI, DataNimbus, Commotion, Telomere, FourKit
 
 Greenhouse embed POST returns **428 + Gmail security code** only on a small set of boards (Coinbase, NewRocket/`highmetric`, EnCharge `enchargeai36`, Gusto, PlanetScale, Neuralink, Akoya). ~95% of other Greenhouse boards return **400** (reCAPTCHA enterprise) — skip those; do not solve captchas.
 
-Live leftover on OTP boards that still fail fit/visa/location: Coinbase Senior MLE India `7739592` (Senior vs 4 YOE); highmetric ServiceNow AI Engineer `6177423004` (no ServiceNow skill); highmetric US/UK/NL Anthropic FDE roles (visa or Senior/Lead); EnCharge AI Compiler Engineer India `4008053009` (compiler/MLIR, not DS/ML). GitLab AI Engineer `8556658002` still recaptcha. BJAK Ashby Applied AI Engineer India `416c3505-bc04-4b6e-8c60-fae0ea8b947e` is a next HTTP target if an Ashby apply path is found. Instahyre remains 8/8 until reset.
+Live leftover on OTP boards that still fail fit/visa/location: Coinbase Senior MLE India `7739592` (Senior vs 4 YOE); highmetric ServiceNow AI Engineer `6177423004` (no ServiceNow skill); highmetric US/UK/NL Anthropic FDE roles (visa or Senior/Lead); EnCharge AI Compiler Engineer India `4008053009` (compiler/MLIR, not DS/ML). GitLab AI Engineer `8556658002` still recaptcha. Do not retry Ashby from this VM.
+
+Workable (new, 2026-09-10): **applied** RealAdvisor Data Scientist (remote, HTTP 201 in live Chrome). Many India listings ask CTC/notice (Funding Societies Delhi hybrid, Innovaccer Noida, Irth MLOps India) — unanswered, skip until `profile.screening_answers` has those. Cutshort job list is login-walled.
+
+User 2026-09-10: **no screenshots / no videos**. Watch the Cloud Agent live desktop (Chrome on DISPLAY=:1). Do not attach ss.
 
 ## Cleared this run
 
