@@ -6,12 +6,14 @@ Clear a row only after the user confirms they completed it **or** a later run su
 
 - **Naukri and LinkedIn** — already applied; do not apply there (also skip Hirist leftovers).
 - **Jobgether Lever MLE** `d5ccb68f` and **Binance Lever Finance AI DS** `3c553d93` — user said skip the open captchas. Logged `blocked` / `captcha_skipped_by_user`. Do not wait on those tabs. Prefer Greenhouse HTTP (no picture captcha).
+- **ZipRecruiter** — `enabled: false`. 14/14 attempts failed (100% > 80% skip rule). Email OTP + computerUse banned. Do not search, login, or apply.
+- **protocol_jobs** — `enabled: false`. 7/7 attempts failed (100% > 80% skip rule). Lever captcha / empty boards. Do not search or apply.
+
+Run `python3 scripts/tracker.py health` every run. SKIP platforms get no search and no apply.
 
 ## Email OTP — next run: fill from Gmail read tool (`playbooks/gmail-otp.md`)
 
-| Job | Company | URL | What |
-|---|---|---|---|
-| account login | ZipRecruiter | https://www.ziprecruiter.com/login | 6-digit email OTP; computerUse banned so login cannot be completed in this agent |
+No open email-OTP items. ZipRecruiter login OTP is skipped with the platform (see Skip above). Greenhouse OTP boards still use Gmail during HTTP apply.
 
 ## Unanswered screening (do not guess)
 

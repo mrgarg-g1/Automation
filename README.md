@@ -33,7 +33,7 @@ Each run, the Cursor agent:
 | `playbooks/` | Step-by-step application flows per platform |
 | `tracker/applications.csv` | Every application attempt + status |
 | `scripts/load_secrets.py` | Writes credentials.env from Cloud Agent env vars |
-| `scripts/tracker.py` | CLI to add/query/export tracker rows |
+| `scripts/tracker.py` | CLI to add/query/export tracker rows; `health` skips platforms over 80% apply-attempt failure |
 | `automations/daily-apply.md` | Prompt + credential wiring for the scheduled Cursor Automation |
 
 ## Quick start
@@ -48,4 +48,5 @@ Each run, the Cursor agent:
 - Daily + per-platform caps with randomized 45–120s delays between applications.
 - Never re-applies to a job already in the tracker (URL + title+company dedupe).
 - Skips jobs below the resume-fit threshold — no spray-and-pray.
+- Skips platforms whose apply-attempt failure rate is above 80% (`python3 scripts/tracker.py health`).
 - Stops and asks you on: captcha, email/phone verification, payment walls (FlexJobs), ambiguous screening questions, or any ToS-sensitive prompt.

@@ -1,5 +1,7 @@
 # Playbook — ZipRecruiter
 
+**DISABLED** in `config/settings.json` (2026-09-10): 14/14 apply attempts failed (100% > 80% skip rule). Email OTP login; computerUse banned. Do not search or apply here until a working no-browser path exists and the user re-enables the platform.
+
 Base: `https://www.ziprecruiter.com`
 
 ## Signup (only if login fails / no account)

@@ -1,15 +1,18 @@
 {
   "daily_cap_total": 30,
   "fit_threshold": 60,
+  "skip_platform_if_failure_pct": 80,
+  "skip_platform_min_attempts": 5,
   "delay_seconds_between_applications": [45, 120],
   "pause_every_n_applications": 5,
   "pause_minutes": [3, 5],
   "platforms": [
     {
       "name": "ziprecruiter",
-      "enabled": true,
+      "enabled": false,
       "daily_cap": 15,
-      "playbook": "playbooks/ziprecruiter.md"
+      "playbook": "playbooks/ziprecruiter.md",
+      "note": "DISABLED: 14/14 apply attempts failed (100%). Email OTP login + computerUse banned. Skip until a working no-browser path exists."
     },
     {
       "name": "remote_co",
@@ -33,9 +36,10 @@
     },
     {
       "name": "protocol_jobs",
-      "enabled": true,
+      "enabled": false,
       "daily_cap": 5,
-      "playbook": "playbooks/protocol-jobs.md"
+      "playbook": "playbooks/protocol-jobs.md",
+      "note": "DISABLED: 7/7 apply attempts failed (100%). Lever captcha / empty Protocol Labs boards. Skip until a working HTTP apply path exists."
     }
   ],
   "search": {

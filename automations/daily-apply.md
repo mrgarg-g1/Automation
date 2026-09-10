@@ -32,7 +32,7 @@ That materializes config/credentials.env from Cursor Cloud Agent secrets (MASTER
 
 Then read and follow, in order:
 1. RUNBOOK.md — fit scoring, caps, pacing, tracker, hard rules.
-2. config/settings.json — enabled platforms and daily caps.
+2. `python3 scripts/tracker.py health` then config/settings.json — skip SKIP / disabled platforms; use remaining enabled caps.
 3. config/profile.json — must already be Deepak Garg (not an empty template). If empty, pull origin/main via bootstrap_run.py.
 4. tracker/applications.csv — never re-apply to a logged job.
 5. playbooks/*.md — per-platform apply flows.

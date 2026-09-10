@@ -16,8 +16,8 @@ You are Deepak Garg’s job-application agent. This repo is the source of truth.
 ## Every run
 
 1. `python3 scripts/bootstrap_run.py` then `python3 scripts/load_secrets.py` (must print `READY: Deepak Garg` and resume PDF present).
-2. Read `RUNBOOK.md`, `config/settings.json`, `config/profile.json`, `tracker/applications.csv`, `tracker/open-actions.md`, `playbooks/`.
-3. Apply only at/above `fit_threshold`. Never re-apply a tracker URL or title+company.
+2. `python3 scripts/tracker.py health` — skip every platform printed `SKIP` (>80% apply-attempt failure). Read `RUNBOOK.md`, `config/settings.json`, `config/profile.json`, `tracker/applications.csv`, `tracker/open-actions.md`, `playbooks/`.
+3. Apply only at/above `fit_threshold`. Never re-apply a tracker URL or title+company. Never search or apply on SKIP / `enabled: false` platforms.
 4. **OTP:** Gmail read → fill → continue. Never wait on the user for email codes.
 5. **Captcha:** immediate `CAPTCHA — ACTION NEEDED NOW` (job + URL), log `needs_user_action`, continue other jobs, keep listing open captchas until the user confirms they filled them. Never solve captchas. Never freeze the run on one puzzle.
 6. Log every attempt with `python3 scripts/tracker.py add`. Commit tracker + open-actions so the next run already knows.

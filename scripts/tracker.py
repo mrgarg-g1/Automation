@@ -5,22 +5,31 @@ Usage:
   python scripts/tracker.py add --platform P --title T --company C --url U --status S [--score N] [--notes "..."]
   python scripts/tracker.py list [--status S] [--platform P] [--days N]
   python scripts/tracker.py stats
+  python scripts/tracker.py health [--json]
   python scripts/tracker.py check --url U            # duplicate check (exit 0 = new, 1 = seen)
   python scripts/tracker.py export --out tracker/export.csv
 """
 import argparse
 import csv
+import json
 import os
 import sys
-from collections import Counter
+from collections import Counter, defaultdict
 from datetime import datetime, timedelta
 
-TRACKER = os.path.join(os.path.dirname(__file__), "..", "tracker", "applications.csv")
+ROOT = os.path.abspath(os.path.join(os.path.dirname(__file__), ".."))
+TRACKER = os.path.join(ROOT, "tracker", "applications.csv")
+SETTINGS = os.path.join(ROOT, "config", "settings.json")
 FIELDS = ["date", "platform", "title", "company", "url", "status", "score", "notes"]
 VALID_STATUSES = {
     "applied", "skipped_low_fit", "skipped_duplicate", "blocked",
     "failed", "signup_done", "needs_user_action",
 }
+# Real apply attempts only. skipped_* / signup_done do not count toward failure %.
+ATTEMPT_STATUSES = {"applied", "blocked", "failed", "needs_user_action"}
+FAIL_STATUSES = {"blocked", "failed", "needs_user_action"}
+DEFAULT_FAIL_PCT = 80
+DEFAULT_MIN_ATTEMPTS = 5
 
 
 def _ensure():
@@ -83,6 +92,95 @@ def cmd_stats(_):
         print(f"\navg fit score of applied: {avg:.1f}")
 
 
+def _load_settings():
+    if not os.path.isfile(SETTINGS):
+        return {}
+    with open(SETTINGS, encoding="utf-8") as f:
+        return json.load(f)
+
+
+def platform_health(rows, fail_pct_threshold=DEFAULT_FAIL_PCT, min_attempts=DEFAULT_MIN_ATTEMPTS):
+    """Return per-platform KEEP/SKIP from apply-attempt failure rate.
+
+    attempts = applied + blocked + failed + needs_user_action
+    fail = blocked + failed + needs_user_action
+    SKIP when attempts >= min_attempts and fail/attempts * 100 > fail_pct_threshold.
+    """
+    counts = defaultdict(Counter)
+    for r in rows:
+        p = (r.get("platform") or "").strip()
+        if p:
+            counts[p][r.get("status") or ""] += 1
+    out = []
+    for platform in sorted(counts):
+        c = counts[platform]
+        applied = c["applied"]
+        fail = sum(c[s] for s in FAIL_STATUSES)
+        attempts = sum(c[s] for s in ATTEMPT_STATUSES)
+        fail_pct = (100.0 * fail / attempts) if attempts else None
+        skip = (
+            attempts >= min_attempts
+            and fail_pct is not None
+            and fail_pct > fail_pct_threshold
+        )
+        out.append({
+            "platform": platform,
+            "applied": applied,
+            "fail": fail,
+            "attempts": attempts,
+            "fail_pct": None if fail_pct is None else round(fail_pct, 1),
+            "health": "SKIP" if skip else "KEEP",
+        })
+    return out
+
+
+def cmd_health(a):
+    settings = _load_settings()
+    fail_pct = settings.get("skip_platform_if_failure_pct", DEFAULT_FAIL_PCT)
+    min_attempts = settings.get("skip_platform_min_attempts", DEFAULT_MIN_ATTEMPTS)
+    enabled = {
+        p.get("name"): bool(p.get("enabled"))
+        for p in settings.get("platforms") or []
+        if p.get("name")
+    }
+    rows = platform_health(_rows(), fail_pct, min_attempts)
+    for r in rows:
+        r["settings"] = "enabled" if enabled.get(r["platform"]) else (
+            "disabled" if r["platform"] in enabled else "unlisted"
+        )
+    skip = [r["platform"] for r in rows if r["health"] == "SKIP"]
+    payload = {
+        "skip_platform_if_failure_pct": fail_pct,
+        "skip_platform_min_attempts": min_attempts,
+        "platforms": rows,
+        "skip": skip,
+    }
+    if a.as_json:
+        print(json.dumps(payload, indent=2))
+        return
+    print(
+        f"skip if failure > {fail_pct}% with at least {min_attempts} apply attempts "
+        "(skipped_low_fit / skipped_duplicate / signup_done do not count)"
+    )
+    print(
+        f"{'platform':<16} {'applied':>8} {'fail':>6} {'attempts':>9} {'fail%':>7}  "
+        f"{'health':<6} {'settings'}"
+    )
+    for r in rows:
+        pct = "—" if r["fail_pct"] is None else f"{r['fail_pct']:.0f}%"
+        print(
+            f"{r['platform']:<16} {r['applied']:>8} {r['fail']:>6} {r['attempts']:>9} "
+            f"{pct:>7}  {r['health']:<6} {r['settings']}"
+        )
+    if skip:
+        print(f"\nSKIP platforms (do not search or apply): {', '.join(skip)}")
+        still_on = [p for p in skip if enabled.get(p)]
+        if still_on:
+            print(f"WARNING: still enabled in settings.json — treat as disabled: {', '.join(still_on)}")
+    else:
+        print("\nSKIP platforms (do not search or apply): (none)")
+
+
 def cmd_check(a):
     rows = _rows()
     if any(norm(r["url"]) == norm(a.url) for r in rows if r["url"]):
@@ -127,6 +225,10 @@ def main():
 
     ps = sub.add_parser("stats")
     ps.set_defaults(fn=cmd_stats)
+
+    ph = sub.add_parser("health")
+    ph.add_argument("--json", dest="as_json", action="store_true")
+    ph.set_defaults(fn=cmd_health)
 
     pc = sub.add_parser("check")
     pc.add_argument("--url", default="")

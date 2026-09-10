@@ -39,7 +39,17 @@ python scripts/load_secrets.py
 
 ## 2. Platform rotation
 
-`settings.json → platforms` lists enabled platforms with per-platform caps. Process in the listed order. Never exceed `daily_cap_total` across platforms. If a platform hits a wall (login blocked, paywall, captcha loop), log `BLOCKED` in the tracker notes, move to the next platform, and report it at the end.
+`settings.json → platforms` lists enabled platforms with per-platform caps. Process in the listed order. Never exceed `daily_cap_total` across platforms.
+
+Right after bootstrap, run:
+
+```
+python3 scripts/tracker.py health
+```
+
+If a platform's apply-attempt failure rate is **above** `skip_platform_if_failure_pct` (default 80) with at least `skip_platform_min_attempts` (default 5) attempts, `health` prints `SKIP`. **Do not search or apply on SKIP platforms** — even if `enabled` is still true. Attempts = `applied` + `blocked` + `failed` + `needs_user_action`. `skipped_low_fit` / `skipped_duplicate` / `signup_done` do not count.
+
+If a platform hits a wall (login blocked, paywall, captcha loop), log `BLOCKED` in the tracker notes, move to the next platform, and report it at the end. Re-run `health` after logging; a platform that just crossed 80% is skipped for the rest of the run.
 
 ## 3. Login / signup policy
 
