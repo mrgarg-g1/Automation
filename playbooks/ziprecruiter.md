@@ -8,12 +8,12 @@ Base: `https://www.ziprecruiter.com`
 2. Choose **email registration** (not Google/LinkedIn buttons).
 3. Fill: first/last name from `profile.full_name`, email + password from `credentials.env` (`ZIPRECRUITER_*` override else `MASTER_*`).
 4. If it asks to upload a resume during onboarding → upload `resume/Resume.pdf`. ZipRecruiter auto-parses it; verify parsed name/title roughly match, fix if wildly wrong.
-5. Email verification or captcha → hand off to user, wait for confirmation.
+5. Email OTP → RUNBOOK §3: pull from Gmail/Updates and fill. Captcha → notify immediately, continue other jobs, keep highlighting.
 6. Log `signup_done` in tracker (title=`account`, company=`ziprecruiter`).
 
 ## Login
 
-`https://www.ziprecruiter.com/login` → email + password. If "forgot password" loop or captcha repeats twice → `blocked`, move on.
+`https://www.ziprecruiter.com/login` → email + password. OTP from Gmail (do not wait). Captcha → immediate notify + continue (RUNBOOK §3). Forgot-password loop twice → `blocked`, move on.
 
 ## Search
 

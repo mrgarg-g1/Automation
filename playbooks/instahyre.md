@@ -10,7 +10,7 @@ India-focused platform; employers also post remote-global roles. Applications ar
 2. Fill name/email/password from `credentials.env` (`INSTAHYRE_*` override else `MASTER_*`).
 3. Complete the candidate profile wizard **from `profile.json`**: current title, years of experience, skills, expected salary (`profile.screening_answers.expected_salary`), notice period, location + "open to remote".
 4. Upload `resume/Resume.pdf` when prompted.
-5. Email OTP/verification → hand off to user, wait.
+5. Email OTP → RUNBOOK §3: read from Gmail/Updates and fill. Do not pause the run.
 6. Log `signup_done`.
 
 ## Login

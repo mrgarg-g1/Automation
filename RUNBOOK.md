@@ -42,8 +42,18 @@ python scripts/load_secrets.py
 
 1. Try login with `credentials.env` email+password for that platform.
 2. If no account exists → follow the playbook's **Signup** section: register with email+password from `credentials.env` (platform-specific password if present, else the master password).
-3. If the platform forces OAuth-only or a verification step (email link, OTP, captcha, 2FA): pause, clearly tell the user what to complete, and wait. Retry once after they confirm. If still blocked → mark `BLOCKED`, continue rotation.
-4. Never invent personal data. Every form value comes from `profile.json`. If a required field has no value, ask the user once and remember the answer in `profile.json → extras`.
+3. **Email OTP / verification codes — do not wait for the user.** Gmail is connected. As soon as a site sends an OTP:
+   1. Fetch it from the connected Gmail / Updates inbox (search recent mail from that site: ZipRecruiter, Greenhouse, Instahyre, Lever, etc.).
+   2. Fill the code and continue the application.
+   3. Never print the full OTP in chat, tracker notes, screenshots-as-text, or git. Say only `otp_from_gmail`.
+   4. If Gmail/Updates is missing or the code is not in the inbox within ~2 minutes → log `needs_user_action` with note `otp_gmail_miss`, **notify immediately**, then continue other jobs (do not freeze the run).
+4. **Captcha / picture puzzles — never sit and wait.** Do not try to solve captchas. Immediately:
+   1. Post a user-visible **CAPTCHA — ACTION NEEDED NOW** alert (platform, job title, company, URL, what to click).
+   2. Log `needs_user_action` with note `captcha_waiting`.
+   3. Leave that tab/form as-is if possible, **continue other applications** (next platform / next job).
+   4. **Keep highlighting** every open captcha in every later status message and in the §7 report until the user says they filled it or the listing expired. Do not bury captcha in a batch report at the end of the run.
+5. Payment walls → `blocked`, continue. OAuth-only with no email path → `blocked`, continue.
+6. Never invent personal data. Every form value comes from `profile.json`. If a required field has no value, ask the user once and remember the answer in `profile.json → extras`.
 
 ## 4. Job discovery & fit scoring
 
@@ -71,6 +81,7 @@ Apply only when **score ≥ settings.fit_threshold** (default 60) **and** the jo
 - Free-text "why this company": 2–3 sentences tying `profile.highlight` to the role's stated requirements. Professional, no fluff.
 - After each submission, wait for a confirmation signal (success page/toast/email note). Then log to tracker via `scripts/tracker.py add`.
 - Randomized delay 45–120s between applications. After every 5 applications, pause 3–5 minutes.
+- Open captcha items stay in a live queue. Re-state that queue after every subsequent apply (or skip) until cleared.
 
 ## 6. Tracker logging
 
@@ -86,12 +97,15 @@ Statuses: `applied`, `skipped_low_fit`, `skipped_duplicate`, `blocked`, `failed`
 
 - Per platform: searched / shortlisted / applied / skipped / blocked counts.
 - Table of applied jobs (title, company, score, URL).
-- Anything needing the user: verifications, paywalls, unanswered screening questions.
+- **Open captcha queue first** (still waiting): title, company, URL — keep listing until the user confirms they filled it.
+- Anything else needing the user: OTP Gmail miss, paywalls, unanswered screening questions.
 - Remaining daily budget.
 
 ## 8. Hard rules
 
 - Never exceed caps. Never apply below threshold. Never duplicate.
 - Never store or echo passwords in chat/tracker. Reference credentials only from `credentials.env`.
-- Never bypass captcha/verification yourself — hand off to the user.
+- Never solve captchas yourself. Notify immediately, continue other jobs, keep highlighting until the user fills them.
+- Email OTP: read from Gmail/Updates and fill. Do not pause the whole run on OTP.
+- Never launch Claude / GPT / Gemini / computerUse-on-Other-Models. If browser apply cannot stay on Cursor Grok, stop and report.
 - If the site's layout is nothing like the playbook after 2 adaptation attempts, mark `blocked` and move on — do not improvise through unknown multi-page forms.

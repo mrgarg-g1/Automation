@@ -41,11 +41,11 @@ Each run, the Cursor agent:
 1. Resume lives at `resume/Resume.pdf`; `config/profile.json` is already filled from it.
 2. Fill in `config/credentials.env` (one master email+password; reused per platform unless overridden).
 3. Say **"run the job automation"** (or `run ziprecruiter only`, `dry run`, etc.).
-4. Complete any captcha/email-verification prompts when the agent hands off to you.
+4. Captcha: the agent should ping you immediately and keep listing open captchas while it applies elsewhere. Email OTP: agent reads Gmail/Updates and fills it.
 
 ## Safety rails (built in)
 
 - Daily + per-platform caps with randomized 45–120s delays between applications.
 - Never re-applies to a job already in the tracker (URL + title+company dedupe).
 - Skips jobs below the resume-fit threshold — no spray-and-pray.
-- Stops and asks you on: captcha, email/phone verification, payment walls (FlexJobs), ambiguous screening questions, or any ToS-sensitive prompt.
+- Captcha: immediate notify + keep highlighting; does not freeze the rest of the run. OTP: Gmail/Updates auto-fill. Stops and asks on payment walls (FlexJobs), ambiguous screening questions, or any ToS-sensitive prompt.

@@ -9,6 +9,7 @@ Cloud runs check out this GitHub repo. Playbooks live in git. **Passwords do not
 | Playbooks, settings, tracker | This GitHub repo | Automation **Select repository** → `mrgarg-g1/Automation` |
 | ZipRecruiter / Instahyre email+password | Cursor **Cloud Agent Secrets** | Injected as env vars; `python scripts/load_secrets.py` writes `credentials.env` at run start |
 | Apify API token | Automation **Tools → Apify** (already connected) | Agent calls the connected Apify tool; token is not in git |
+| Application OTPs | Automation **Tools → Gmail** (Updates / inbox) | Agent reads the latest code from Gmail and fills it. Never commit mail. |
 
 Add secrets at [cursor.com/dashboard/cloud-agents](https://cursor.com/dashboard/cloud-agents) as **Runtime Secrets** (so values stay out of the transcript):
 
@@ -39,8 +40,14 @@ Then read and follow, in order:
 
 Use the connected Apify tool for job search and apply actors (same pattern as Claude + Apify). Apify auth is the connected tool, not a file in this repo.
 
-For each enabled platform: search, score (>= fit_threshold), apply within caps, 45–120s delay between applications. If a site needs captcha / email OTP / payment, log blocked and continue. Log every attempt with:
+For each enabled platform: search, score (>= fit_threshold), apply within caps, 45–120s delay between applications.
+
+OTP: do not wait for me. Read the code from connected Gmail / Updates and fill it. Never print the code.
+
+Captcha: do not sit on the page. Notify me IMMEDIATELY with a CAPTCHA — ACTION NEEDED NOW line (job + URL), log needs_user_action, continue other applications, and keep repeating every open captcha in later messages until I say I filled it.
+
+Payment wall → blocked, continue. Log every attempt with:
   python scripts/tracker.py add --platform ... --title ... --company ... --url ... --status ... --score ...
 
-Finish with the RUNBOOK §7 end-of-run report.
+Finish with the RUNBOOK §7 end-of-run report (captcha queue first).
 ```
