@@ -74,3 +74,4 @@ date,platform,title,company,url,status,score,notes
 2026-09-10T08:17:19,protocol_jobs,Machine Learning Engineer,Jobgether,https://jobs.lever.co/jobgether/d5ccb68f-a15c-43d7-a381-05cfced69df3,blocked,80.0,captcha_skipped_by_user lever_hcaptcha
 2026-09-10T08:17:19,protocol_jobs,Finance AI Data Scientist,Binance,https://jobs.lever.co/binance/3c553d93-1746-4e78-b6eb-b82bff5cc801,blocked,60.0,captcha_skipped_by_user lever_hcaptcha
 2026-09-10T08:17:19,remote_co,AI Engineer,GitLab,https://job-boards.greenhouse.io/gitlab/jobs/8556658002,blocked,80.0,Remote_Bangalore greenhouse_cdp phone_country_validation recaptcha_present
+2026-09-10T08:39:48,remote_co,"Research Engineer, AI Models",EnCharge AI,https://job-boards.greenhouse.io/enchargeai36/jobs/4252539009,applied,70.0,ats_greenhouse otp_from_gmail confirmation_http India_remote_friendly
