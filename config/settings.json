@@ -1,5 +1,5 @@
 {
-  "daily_cap_total": 30,
+  "daily_cap_total": 80,
   "fit_threshold": 60,
   "skip_platform_if_failure_pct": 80,
   "skip_platform_min_attempts": 5,
@@ -17,14 +17,14 @@
     {
       "name": "remote_co",
       "enabled": true,
-      "daily_cap": 8,
+      "daily_cap": 25,
       "playbook": "playbooks/remote-co.md",
       "note": "Most listings redirect to company ATS pages — hand off to playbooks/ats-direct.md"
     },
     {
       "name": "instahyre",
       "enabled": true,
-      "daily_cap": 8,
+      "daily_cap": 40,
       "playbook": "playbooks/instahyre.md"
     },
     {
@@ -40,6 +40,13 @@
       "daily_cap": 5,
       "playbook": "playbooks/protocol-jobs.md",
       "note": "DISABLED: 7/7 apply attempts failed (100%). Lever captcha / empty Protocol Labs boards. Skip until a working HTTP apply path exists."
+    },
+    {
+      "name": "ashby",
+      "enabled": false,
+      "daily_cap": 25,
+      "playbook": "playbooks/ats-direct.md",
+      "note": "DISABLED: 5/5 apply attempts failed (100% > 80% skip). Ashby flagged this environment as spam. Skip until applying from a normal home/mobile network."
     }
   ],
   "search": {

@@ -9,6 +9,8 @@ Clear a row only after the user confirms they completed it **or** a later run su
 - **ZipRecruiter** — `enabled: false`. 14/14 attempts failed (100% > 80% skip rule). Email OTP + computerUse banned. Do not search, login, or apply.
 - **protocol_jobs** — `enabled: false`. 7/7 attempts failed (100% > 80% skip rule). Lever captcha / empty boards. Do not search or apply.
 
+- **Ashby** — `enabled: false`. 5/5 attempts failed (100% > 80% skip). BJAK/Tolken/AHL/Sarvam submissions from this VM were flagged as spam. Do not retry from this environment.
+
 Run `python3 scripts/tracker.py health` every run. SKIP platforms get no search and no apply.
 
 ## Email OTP — next run: fill from Gmail read tool (`playbooks/gmail-otp.md`)
@@ -26,7 +28,9 @@ Set `profile.screening_answers.requires_sponsorship` (Yes/No). Until then skip *
 
 India-located roles: answer from `work_authorization` = authorized in India.
 
-## Next Instahyre (cap currently 8/8 — apply after reset)
+## Next Instahyre (site login currently failing)
+
+Stored Instahyre password is rejected (`Password you entered is incorrect`). 8/8 already applied today on this account earlier. Queued jobs below stay for after login works:
 
 | Job | Company | URL | YOE / loc |
 |---|---|---|---|
@@ -35,6 +39,10 @@ India-located roles: answer from `work_authorization` = authorized in India.
 | AI / ML Engineer | Azisly | https://www.instahyre.com/job-442377-ai-ml-engineer-at-azisly-gurgaon/ | 4-8 Gurgaon |
 | Senior Data Scientist | Eucloid Data Solutions | https://www.instahyre.com/job-442185-senior-data-scientist-at-eucloid-data-solutions-chennai-gurgaon/ | 3-5 Gurgaon (+Chennai) |
 | AI Product Engineer | DISCO | https://www.instahyre.com/job-421516-ai-product-engineer-at-disco-work-from-home/ | 3-7 WFH |
+| Senior ML Engineer | Amazon | https://www.instahyre.com/job-420139/ | 3-7 NCR |
+| Data Scientist | Arintra | https://www.instahyre.com/job-436220/ | 4-8 Noida |
+| AI Engineer | IDFC FIRST Bank | https://www.instahyre.com/job-398232/ | 3-7 Gurgaon |
+| Computer Vision Engineer | Goldcast | https://www.instahyre.com/job-435862/ | 1-5 Noida |
 
 Skip already-applied Instahyre: SYDIAI, DataNimbus, Commotion, Telomere, FourKites, Nablon, Kahuna, Zynix.
 

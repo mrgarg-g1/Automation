@@ -75,3 +75,9 @@ date,platform,title,company,url,status,score,notes
 2026-09-10T08:17:19,protocol_jobs,Finance AI Data Scientist,Binance,https://jobs.lever.co/binance/3c553d93-1746-4e78-b6eb-b82bff5cc801,blocked,60.0,captcha_skipped_by_user lever_hcaptcha
 2026-09-10T08:17:19,remote_co,AI Engineer,GitLab,https://job-boards.greenhouse.io/gitlab/jobs/8556658002,blocked,80.0,Remote_Bangalore greenhouse_cdp phone_country_validation recaptcha_present
 2026-09-10T08:39:48,remote_co,"Research Engineer, AI Models",EnCharge AI,https://job-boards.greenhouse.io/enchargeai36/jobs/4252539009,applied,70.0,ats_greenhouse otp_from_gmail confirmation_http India_remote_friendly
+2026-09-10T10:05:07,ashby,Applied AI Engineer,Bjak,https://jobs.ashbyhq.com/bjakcareer/416c3505-bc04-4b6e-8c60-fae0ea8b947e,blocked,80.0,ashby_spam_flagged datacenter_ip form_filled resume_uploaded
+2026-09-10T10:05:07,ashby,Applied AI Engineer - AI Finance Agent,Bjak,https://jobs.ashbyhq.com/bjakcareer/e8406b78-3cb3-436c-8a22-6e1d44cf8816,blocked,80.0,ashby_spam_flagged same_session skipped_retry
+2026-09-10T10:05:07,ashby,Applied Scientist / Applied ML Engineer,Tolken,https://jobs.ashbyhq.com/tolken/5c91433e-89df-476c-a19a-3993adcbac34,blocked,75.0,ashby_spam_flagged same_session skipped
+2026-09-10T10:05:08,ashby,Forward-Deployed AI Engineer,AHL - Saaf AI,https://jobs.ashbyhq.com/AHL-SaafAI/cf683b2f-f1db-4ca0-9bac-57eb64827c0a,blocked,75.0,ashby_spam_flagged same_session skipped
+2026-09-10T10:05:08,ashby,"Embedded Data Scientist, Chanakya",Sarvam,https://jobs.ashbyhq.com/sarvam/dc047f4f-97be-4bb3-a9f1-cebbfc4de3e6,blocked,70.0,ashby_spam_flagged Delhi_onsite_ok same_session skipped
+2026-09-10T10:05:08,remote_co,Claude AI Engineer Technical Mentor - Independent Contractor,Udacity,https://job-boards.greenhouse.io/udacity/jobs/8623954002,blocked,70.0,greenhouse_http_400 recaptcha
