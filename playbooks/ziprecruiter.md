@@ -8,12 +8,12 @@ Base: `https://www.ziprecruiter.com`
 2. Choose **email registration** (not Google/LinkedIn buttons).
 3. Fill: first/last name from `profile.full_name`, email + password from `credentials.env` (`ZIPRECRUITER_*` override else `MASTER_*`).
 4. If it asks to upload a resume during onboarding → upload `resume/Resume.pdf`. ZipRecruiter auto-parses it; verify parsed name/title roughly match, fix if wildly wrong.
-5. Email verification or captcha → hand off to user, wait for confirmation.
+5. Email OTP → RUNBOOK §3: pull from Gmail/Updates and fill. Captcha → notify immediately, continue other jobs, keep highlighting.
 6. Log `signup_done` in tracker (title=`account`, company=`ziprecruiter`).
 
 ## Login
 
-`https://www.ziprecruiter.com/login` → email + password. If "forgot password" loop or captcha repeats twice → `blocked`, move on.
+`https://www.ziprecruiter.com/login` → email + password. OTP from Gmail (do not wait). Captcha → immediate notify + continue (RUNBOOK §3). Forgot-password loop twice → `blocked`, move on.
 
 ## Search
 
@@ -25,6 +25,8 @@ https://www.ziprecruiter.com/jobs-search?search=<ROLE>&location=<LOCATION_OR_Rem
 
 - One search per role in `search.roles` (stop that role's listing when its platform cap share is met).
 - Sort by date when the sort control exists.
+- Fully remote US/global listings are OK. Hybrid/onsite: only Gurugram, Noida, Delhi — skip US-city hybrid.
+- Email OTP: pause and ask the user for the code (they will share it); do not abandon the platform on the first OTP.
 
 ## Qualify
 

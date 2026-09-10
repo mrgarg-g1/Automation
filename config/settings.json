@@ -44,8 +44,10 @@
       "AI Engineer",
       "Machine Learning Engineer"
     ],
-    "locations": ["Remote"],
-    "remote_only": true,
+    "locations": ["Remote", "Gurugram", "Noida", "Delhi"],
+    "remote_only": false,
+    "remote_worldwide": true,
+    "hybrid_ok_cities": ["Gurugram", "Gurgaon", "Noida", "Delhi", "New Delhi", "NCR", "Delhi NCR"],
     "posted_within_days": 7,
     "exclude_keywords": ["clearance", "citizen only", "onsite only"],
     "exclude_if_required": []
