@@ -38,7 +38,9 @@ Skip already-applied Instahyre: SYDIAI, DataNimbus, Commotion, Telomere, FourKit
 
 ## Next ATS (Greenhouse HTTP — no Lever captcha)
 
-Live India-remote / NCR mid DS-ML still open after today's applies: GitLab AI Engineer `8556658002` Remote Bangalore (blocked this run: phone-country widget + recaptcha). OpenAI Applied AI Engineer Delhi Ashby `bf036b23` (posted 2026-08-03, older than 7d). Coinbase Senior MLE India `7739592` is Senior vs 4 YOE — skip. No other highmetric India DS/ML besides already-applied NewRocket roles.
+Greenhouse embed POST returns **428 + Gmail security code** only on a small set of boards (Coinbase, NewRocket/`highmetric`, EnCharge `enchargeai36`, Gusto, PlanetScale, Neuralink, Akoya). ~95% of other Greenhouse boards return **400** (reCAPTCHA enterprise) — skip those; do not solve captchas.
+
+Live leftover on OTP boards that still fail fit/visa/location: Coinbase Senior MLE India `7739592` (Senior vs 4 YOE); highmetric ServiceNow AI Engineer `6177423004` (no ServiceNow skill); highmetric US/UK/NL Anthropic FDE roles (visa or Senior/Lead); EnCharge AI Compiler Engineer India `4008053009` (compiler/MLIR, not DS/ML). GitLab AI Engineer `8556658002` still recaptcha. BJAK Ashby Applied AI Engineer India `416c3505-bc04-4b6e-8c60-fae0ea8b947e` is a next HTTP target if an Ashby apply path is found. Instahyre remains 8/8 until reset.
 
 ## Cleared this run
 
@@ -48,3 +50,4 @@ Live India-remote / NCR mid DS-ML still open after today's applies: GitLab AI En
 - Moniepoint DS Fraud `4921127101` — already applied.
 - Coinbase Machine Learning Engineer `7985187` Remote India — applied (confirmation email).
 - Jobgether MLE + Binance Finance AI DS — skipped by user (captcha).
+- EnCharge AI Research Engineer, AI Models `4252539009` India remote-friendly — applied (Greenhouse HTTP 200 + Gmail OTP).
