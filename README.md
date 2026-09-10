@@ -1,6 +1,6 @@
 # Job Application Automation (Cursor-native)
 
-A robust, resume-driven job application system for **Cursor Automations**. Playbooks live in this GitHub repo. Job-site passwords live in Cursor Cloud Agent Secrets. Apify stays connected on the automation (not in git).
+A robust, resume-driven job application system for **Cursor Automations**. Playbooks live in this GitHub repo. Job-site passwords live in Cursor Cloud Agent Secrets. **Apify** and **Gmail (read)** stay connected on the automation (not in git).
 
 ## How it works
 
@@ -24,14 +24,16 @@ Each run, the Cursor agent:
 
 | Path | Purpose |
 |------|---------|
+| `AGENTS.md` | Models, Gmail OTP, captcha, computerUse ban — read first |
 | `RUNBOOK.md` | Master instructions the agent follows every run |
 | `resume/Resume.pdf` | Canonical PDF attached on applications |
 | `config/profile.json` | Structured resume data used for forms and fit scoring |
 | `config/settings.json` | Platforms, daily caps, search queries, fit threshold |
 | `config/credentials.env` | Email/password (local only — gitignored, never commit) |
 | `config/credentials.env.example` | Key names to copy into Cursor Cloud Agent Secrets |
-| `playbooks/` | Step-by-step application flows per platform |
+| `playbooks/` | Per-platform flows + `gmail-otp.md` (Gmail read, same as Apify) |
 | `tracker/applications.csv` | Every application attempt + status |
+| `tracker/open-actions.md` | Captchas/OTPs still waiting for the next run |
 | `scripts/load_secrets.py` | Writes credentials.env from Cloud Agent env vars |
 | `scripts/tracker.py` | CLI to add/query/export tracker rows |
 | `automations/daily-apply.md` | Prompt + credential wiring for the scheduled Cursor Automation |
@@ -41,11 +43,11 @@ Each run, the Cursor agent:
 1. Resume lives at `resume/Resume.pdf`; `config/profile.json` is already filled from it.
 2. Fill in `config/credentials.env` (one master email+password; reused per platform unless overridden).
 3. Say **"run the job automation"** (or `run ziprecruiter only`, `dry run`, etc.).
-4. Complete any captcha/email-verification prompts when the agent hands off to you.
+4. Captcha: the agent should ping you immediately and keep listing open captchas while it applies elsewhere. Email OTP: agent reads Gmail/Updates and fills it.
 
 ## Safety rails (built in)
 
 - Daily + per-platform caps with randomized 45–120s delays between applications.
 - Never re-applies to a job already in the tracker (URL + title+company dedupe).
 - Skips jobs below the resume-fit threshold — no spray-and-pray.
-- Stops and asks you on: captcha, email/phone verification, payment walls (FlexJobs), ambiguous screening questions, or any ToS-sensitive prompt.
+- Captcha: immediate notify + keep highlighting; does not freeze the rest of the run. OTP: Gmail/Updates auto-fill. Stops and asks on payment walls (FlexJobs), ambiguous screening questions, or any ToS-sensitive prompt.
