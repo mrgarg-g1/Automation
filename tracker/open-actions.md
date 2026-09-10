@@ -2,6 +2,18 @@
 
 Clear a row only after the user confirms they completed it **or** a later run submits successfully and logs `applied`.
 
+## CAPTCHA — ACTION NEEDED NOW (keep highlighting)
+
+Workable submit hangs on **Submitting…** with no `/apply` POST (invisible Cloudflare Turnstile). Live Chrome tabs left open. Do **not** solve; fill the puzzle then tell the next run. Do **not** open more Workable tabs from this datacenter until these are cleared.
+
+| Job | Company | URL |
+|---|---|---|
+| AI/ML Engineer | EUROPEAN DYNAMICS | https://jobs.workable.com/view/idz8Yi9JAb3NehqKnjPkgW/remote-ai%2Fml-engineer-in-athens-at-european-dynamics |
+| AI Engineer | Youssef L | https://jobs.workable.com/view/oWbDXQHaTCsniQ9JzCGake/remote-ai-engineer-in-casablanca-settat-at-youssef-l |
+| AI Engineer | Portless | https://jobs.workable.com/view/boRuEDWWy88rZ2DjiiwZy1/remote-ai-engineer-in-united-states-at-portless |
+
+Cutshort candidate login also showed Turnstile — skipped, no extra tab piled.
+
 ## Skip (user 2026-09-10)
 
 - **Naukri and LinkedIn** — already applied; do not apply there (also skip Hirist leftovers).
@@ -26,7 +38,11 @@ Set `profile.screening_answers.requires_sponsorship` (Yes/No). Until then skip *
 | Machine Learning Engineer | Twilio | https://job-boards.greenhouse.io/twilio/jobs/7702644 |
 | Machine Learning Engineer II | PathAI | https://job-boards.greenhouse.io/pathai/jobs/8696752002 |
 
+Also blocks **Y Combinator Work at a Startup** profile step 2 (`/application/location`): “Do you require visa sponsorship to work legally in the United States?” Required. Logged in as `mrgarg` via Gmail magic link (`otp_from_gmail`). Cannot finish profile or click Apply until this is set. Hive Senior SWE ML `https://www.workatastartup.com/jobs/103933` (CA / Remote CA, 5+ YOE) is waiting on that.
+
 India-located roles: answer from `work_authorization` = authorized in India.
+
+Also still empty: `expected_salary`, `notice_period`. Workable India/NCR listings that require CTC/notice stay skipped (Irth MLOps, WorkNomads, Runware, NineTwoThree, Valsoft, Flinks, Action1, Xenon7 contractor, SimpliCity Canada rate).
 
 ## Next Instahyre (site login currently failing)
 
@@ -52,7 +68,7 @@ Greenhouse embed POST returns **428 + Gmail security code** only on a small set 
 
 Live leftover on OTP boards that still fail fit/visa/location: Coinbase Senior MLE India `7739592` (Senior vs 4 YOE); highmetric ServiceNow AI Engineer `6177423004` (no ServiceNow skill); highmetric US/UK/NL Anthropic FDE roles (visa or Senior/Lead); EnCharge AI Compiler Engineer India `4008053009` (compiler/MLIR, not DS/ML). GitLab AI Engineer `8556658002` still recaptcha. Do not retry Ashby from this VM.
 
-Workable (new, 2026-09-10): **applied** RealAdvisor Data Scientist (remote, HTTP 201 in live Chrome). Many India listings ask CTC/notice (Funding Societies Delhi hybrid, Innovaccer Noida, Irth MLOps India) — unanswered, skip until `profile.screening_answers` has those. Cutshort job list is login-walled.
+Workable: **applied** RealAdvisor Data Scientist earlier this run (HTTP 201). Later submits from this IP/profile hang on Turnstile even on a fresh Chrome user-data-dir — stop Workable until the captcha queue is cleared. Greenhouse OTP India mid-level already applied; other GH boards still **400 recaptcha** (G-P Senior DS India `7704107003` confirmed 400 after mapping referral questions). Instahyre master password still rejected. YC account login works; profile blocked on US sponsorship.
 
 User 2026-09-10: **no screenshots / no videos**. Watch the Cloud Agent live desktop (Chrome on DISPLAY=:1). Do not attach ss.
 
