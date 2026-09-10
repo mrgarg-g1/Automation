@@ -20,8 +20,11 @@ python scripts/load_secrets.py
   1. `python scripts/load_secrets.py` (writes `config/credentials.env` from Cursor Cloud Agent secrets `MASTER_EMAIL` / `MASTER_PASSWORD`).
   2. If `config/credentials.env` already exists (local run), leave it.
   3. If still missing, STOP. Tell the user to add Runtime Secrets at https://cursor.com/dashboard/cloud-agents (same key names as `config/credentials.env.example`) **or** copy that example file locally. Never ask them to commit passwords.
-- Apify — if the Apify tool is connected on this automation, use it for job search / apply actors. The Apify token is already in that connection; do not look for it in the repo.
+- Apify — connected tool (`Tools → Apify`). Use for job search. Token is not in git.
+- Gmail — connected tool (`Tools → Gmail`, read). Same wiring as Apify. Follow `playbooks/gmail-otp.md` for OTPs. Never commit mail.
+- `AGENTS.md` — models, captcha/OTP, computerUse ban. Read first.
 - `tracker/applications.csv` — history. Load before applying to anything.
+- `tracker/open-actions.md` — captchas/OTPs still waiting. Keep highlighting until cleared.
 - `playbooks/<platform>.md` — per-platform flow.
 - Never echo, log, or commit secret values.
 

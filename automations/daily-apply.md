@@ -32,13 +32,14 @@ bootstrap_run.py must print READY: Deepak Garg and resume_pdf=True. If it cannot
 That materializes config/credentials.env from Cursor Cloud Agent secrets (MASTER_EMAIL, MASTER_PASSWORD). Never print those values. Never commit that file.
 
 Then read and follow, in order:
-1. RUNBOOK.md — fit scoring, caps, pacing, tracker, hard rules.
-2. config/settings.json — enabled platforms and daily caps.
-3. config/profile.json — must already be Deepak Garg (not an empty template). If empty, pull origin/main via bootstrap_run.py.
-4. tracker/applications.csv — never re-apply to a logged job.
-5. playbooks/*.md — per-platform apply flows.
+1. AGENTS.md — models (Grok/Composer only; never computerUse/Claude), Gmail OTP, captcha alerts.
+2. RUNBOOK.md — fit scoring, caps, pacing, tracker, hard rules.
+3. config/settings.json — enabled platforms and daily caps.
+4. config/profile.json — must already be Deepak Garg (not an empty template). If empty, pull origin/main via bootstrap_run.py.
+5. tracker/applications.csv + tracker/open-actions.md — never re-apply; keep highlighting open captchas/OTPs.
+6. playbooks/*.md — including playbooks/gmail-otp.md (Gmail is Tools → Gmail, same as Apify).
 
-Use the connected Apify tool for job search. Use connected Gmail / Updates for OTPs. Do not launch Claude or other third-party models.
+Use connected Apify for search. Use connected Gmail read tools for OTPs (discover the Gmail namespace every run; do not hard-code a stale tool id). Never launch Claude or computerUse.
 
 For each enabled platform: search, score (>= fit_threshold), apply within caps, 45–120s delay between applications.
 
