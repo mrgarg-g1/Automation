@@ -13,6 +13,7 @@ User 2026-09-10: skip Jobgether/Binance Lever picture captchas and keep applying
 | AI Engineer | Portless | https://jobs.workable.com/view/boRuEDWWy88rZ2DjiiwZy1/remote-ai-engineer-in-united-states-at-portless | Turnstile / submit hang |
 | Senior Machine Learning Engineer (Bangalore/Noida) | Level AI | https://jobs.lever.co/levelai/55ba7aee-57ff-440c-91a4-58bcafcd10a8/apply | Lever hCaptcha (Noida listed) |
 | Data Scientist | ConveGenius | https://convegenius.keka.com/careers/applyjob/149252 | Keka image captcha **and** CTC/notice |
+| GenAI / AI-ML Engineer | Two95 International Inc. | https://jobs.workable.com/view/mNpscGkGE3CWW9hguwr8dk/genai-%2F-ai-ml-engineer-in-gurugram-at-two95-international-inc. | Workable Turnstile — **tab is open now on the live desktop**, form already filled + resume. Click the checkbox and Submit. |
 
 ## Company policy (user 2026-09-15 follow-up)
 
@@ -39,6 +40,8 @@ Set `profile.screening_answers.expected_salary`, `notice_period`. Until then ski
 | MLE II Applied Research | PathAI | https://job-boards.greenhouse.io/pathai/jobs/8696752002 |
 
 Also set `profile.screening_answers.requires_sponsorship` (PathAI US work-auth questions). Until then skip PathAI.
+
+**i2e Consulting Remote DS form is filled on the live desktop** except Current CTC, Expected CTC, Notice Period: https://www.i2econsulting.com/jobs/data-scientist-sr-data-scientist — type those three and click Submit Application.
 
 ## Next Instahyre (login failing)
 

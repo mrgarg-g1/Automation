@@ -6,7 +6,7 @@ Company tier: mid-size only (Phoenix Contact, NCR peers, India-remote). Never Sy
 
 2026-09-15 follow-up: 62-company shortlist in `config/company_shortlist.json`. Keka (ConveGenius Noida DS) and Lever (Level AI Noida ML) are live company-site applies that need CTC/notice and/or captcha — do not skip the rest of those ATS boards. Instahyre login 403 from this VM. Apify balance too low for Naukri scraper.
 
-2026-09-15 apply: Greenhouse S3 resume presign + JSON POST to `boards.greenhouse.io/embed/{board}/jobs/{id}` with empty `g-recaptcha-enterprise-token` returns 428 JSON. OTP only when body includes `security_code_recipient` (NewRocket/EnCharge path). Jumio + Moniepoint Credit are recaptcha-only. Workable apply POST 412 Turnstile. Applied today still 0 until Instahyre password, CTC/notice, or a new OTP-board India DS role.
+2026-09-15 desktop: Chrome is running on DISPLAY=:1 with Workable India DS search (47 jobs), Two95 Gurugram apply (Turnstile), i2e Remote DS form, Jumio, Mrsool, Instahyre. Instahyre login in Chrome still “password incorrect”; job search itself loads (HTTP 403 was bot detection). Two95 Submit is waiting on Turnstile on the live desktop.
 
 Models: Cursor Grok / Composer only. Never `computerUse` (it billed Claude Sonnet 4.5 on 2026-09-10 even with `inherit`). Never Claude / GPT / Gemini / Muse.
 
