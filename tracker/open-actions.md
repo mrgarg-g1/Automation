@@ -4,17 +4,24 @@ Clear a row only after the user confirms they completed it **or** a later run su
 
 ## CAPTCHA — ACTION NEEDED NOW (do not solve; keep highlighting)
 
-User 2026-09-10: skip Jobgether/Binance Lever picture captchas and keep applying elsewhere. Workable Turnstile tabs should not be piled.
+User 2026-09-10: skip Jobgether/Binance Lever picture captchas and keep applying elsewhere. Workable Turnstile tabs should not be piled. One Lever hCaptcha is enough to flag — do not open four Level AI tabs.
 
 | Job | Company | URL | What |
 |---|---|---|---|
 | AI/ML Engineer | EUROPEAN DYNAMICS | https://jobs.workable.com/view/idz8Yi9JAb3NehqKnjPkgW/remote-ai%2Fml-engineer-in-athens-at-european-dynamics | Cloudflare Turnstile |
 | AI Engineer | Youssef L | https://jobs.workable.com/view/oWbDXQHaTCsniQ9JzCGake/remote-ai-engineer-in-casablanca-settat-at-youssef-l | Turnstile / submit hang |
 | AI Engineer | Portless | https://jobs.workable.com/view/boRuEDWWy88rZ2DjiiwZy1/remote-ai-engineer-in-united-states-at-portless | Turnstile / submit hang |
+| Senior Machine Learning Engineer (Bangalore/Noida) | Level AI | https://jobs.lever.co/levelai/55ba7aee-57ff-440c-91a4-58bcafcd10a8/apply | Lever hCaptcha (Noida listed) |
+| Data Scientist | ConveGenius | https://convegenius.keka.com/careers/applyjob/149252 | Keka image captcha **and** CTC/notice |
 
-## Company tier (user 2026-09-15)
+## Company policy (user 2026-09-15 follow-up)
 
-Mid-size only: Syren Cloud, Phoenix Contact, Noida/Gurugram/Delhi peers. Fully remote worldwide still allowed. Skip Amazon, Flipkart, FAANG, Big 4, Indian IT majors. `python3 scripts/company_filter.py --company NAME`.
+- Never apply to **Syren Cloud** (current employer).
+- Skip a company after **5 `applied` rows**.
+- Naukri = company-site / ATS only. Never Naukri Apply Now.
+- Do not skip an entire board because one job is blocked.
+- Shortlist: `config/company_shortlist.json` (60 companies).
+- `python3 scripts/company_filter.py --company NAME`
 
 ## Unanswered screening (do not invent)
 
@@ -25,10 +32,14 @@ Set `profile.screening_answers.expected_salary`, `notice_period`. Until then ski
 | AI Engineer | NK Securities Research | https://job-boards.eu.greenhouse.io/nksecuritiesresearch/jobs/4811652101 |
 | AI/ML Researcher | NK Securities Research | https://job-boards.eu.greenhouse.io/nksecuritiesresearch/jobs/4914411101 |
 | Data Scientist | Insurity India | https://job-boards.greenhouse.io/insurityindia/jobs/4300524009 |
+| Senior AI-Native Engineer | Payoneer | https://job-boards.greenhouse.io/payoneer/jobs/7431102 |
+| Data Scientist | ConveGenius | https://convegenius.keka.com/careers/applyjob/149252 |
+| Senior AI Engineer | FourKites | https://job-boards.greenhouse.io/fourkites/jobs/7981512 |
+| Senior Data Scientist | FourKites | https://job-boards.greenhouse.io/fourkites/jobs/8146530 |
 
 ## Next Instahyre (login failing)
 
-Stored Instahyre password is still rejected. Update `INSTAHYRE_PASSWORD` in Cloud Agent secrets. Queued mid-size NCR/remote fits after login works:
+Login page **403** from this VM; stored password still not usable. Set `INSTAHYRE_PASSWORD` in Cloud Agent secrets. After login, apply on Instahyre 1-click **or** the company ATS from the shortlist (preferred).
 
 | Job | Company | URL |
 |---|---|---|
@@ -38,18 +49,18 @@ Stored Instahyre password is still rejected. Update `INSTAHYRE_PASSWORD` in Clou
 | Senior AI Engineer | Bloom AI | https://www.instahyre.com/job-442873-senior-ai-engineer-at-bloom-ai-delhi/ |
 | Senior AI Engineer | VerbaFlo | https://www.instahyre.com/job-439863-senior-ai-engineer-at-verbaflo-gurgaon/ |
 | Sr. Agentic AI Engineer | Shuru Technologies | https://www.instahyre.com/job-440265-sr-agentic-ai-engineer-at-shuru-technologies-mumbai-work-from-home/ |
-| AI Engineer | Zero to 1 | https://www.instahyre.com/job-390614-ai-engineer-at-zero-to-1-work-from-home/ |
 | AI Product Engineer | SquadStack.ai | https://www.instahyre.com/job-441903-ai-product-engineer-at-squadstack-noida/ |
-| AI / ML Engineer | Avaz | https://www.instahyre.com/job-439263-ai-ml-engineer-at-avaz-chennai-work-from-home/ |
-| Senior ML Engineer | Proximity Labs | https://www.instahyre.com/job-416875-senior-ml-engineer-at-proximity-labs-work-from-home/ |
-
-Dropped (top-tier): Infosys Gurgaon/Noida Data Engineer, Accenture LLM/ML/AI roles, Adobe Noida MLE.
+| Data Scientist | VMock | https://www.instahyre.com/job-333294-data-scientist-at-vmock-gurgaon/ |
+| Senior Data Scientist | CIMET | https://www.instahyre.com/job-419353-senior-data-scientist-at-cimet-gurgaon/ |
+| Data Scientist | Apeiro | https://www.instahyre.com/job-436361-data-scientist-at-apeiro-noida/ |
+| Data Scientist | i2e Consulting | https://www.instahyre.com/job-413191-data-scientist-at-i2e-consulting-work-from-home/ |
+| Sr. Data Scientist | Winmore | https://www.instahyre.com/job-409751-sr-data-scientist-at-winmore-work-from-home/ |
 
 Skip already-applied Instahyre: SYDIAI, DataNimbus, Commotion, Telomere, FourKites, Nablon, Kahuna, Zynix.
 
-## Greenhouse HTTP
+## Greenhouse / ATS HTTP (job-by-job, not board-skip)
 
-Most boards return **400 recaptcha enterprise** (Innodata Research DS `4404732009` this run). OTP boards (Coinbase / NewRocket / EnCharge) are either already applied, company-filter banned, or not DS/ML. Phoenix Contact US board still has no India DS/ML (Pennsylvania intern only).
+Fillable + location-OK India/remote DS roles this run were already applied (NewRocket India, EnCharge India, Moniepoint India Fraud) **or** asked CTC/notice/visa. FourKites Remote India Senior AI/DS needs notice or CTC. Innodata DS roles are US/Canada + salary/visa except Research DS `4404732009` (already `blocked` recaptcha, do not re-hit URL).
 
 ## Models
 

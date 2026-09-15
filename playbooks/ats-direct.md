@@ -2,6 +2,10 @@
 
 The shared engine for applications that happen on a company's own applicant tracking system — reached from Remote.co, Protocol boards, FlexJobs "company site" links, etc.
 
+## Board-level skip rule
+
+Do **not** skip an entire ATS (Greenhouse, Lever, ZipRecruiter, Remote.co) because one job hit recaptcha, CTC, or a login wall. Log that job (`blocked` / `needs_user_action`) and continue to the next listing / next company.
+
 ## Identify the ATS from the URL
 
 | URL pattern | ATS |
@@ -37,6 +41,10 @@ Workday almost always requires creating a per-company account (email + password)
 2. Email verification → Gmail/Updates OTP (RUNBOOK §3), not a full-run pause.
 3. Multi-step form: use "autofill from resume" when offered, verify each step.
 4. If the flow exceeds ~8 steps or hits repeated validation errors after 2 adaptation attempts → `blocked` with note "workday_complexity", continue rotation. Do not grind through broken Workday flows.
+
+## Keka (`*.keka.com/careers`)
+
+Common for India mid-size (SquadStack, ConveGenius, GoComet, Amantya). Job list: `GET /careers/api/embedjobs/default/active/{portalGuid}`. Apply form: `/careers/applyjob/{jobId}`. Often requires **current/expected CTC, notice, and an image captcha**. Do not invent CTC/notice. If captcha or CTC is required, log `needs_user_action` for **that job** and continue to the next company — do not skip the rest of Keka.
 
 ## Generic / unknown ATS
 

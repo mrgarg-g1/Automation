@@ -41,7 +41,7 @@ Then read and follow, in order:
 
 Use connected Apify for search. Use connected Gmail read tools for OTPs (discover the Gmail namespace every run; do not hard-code a stale tool id). Never launch Claude or computerUse.
 
-Company filter: mid-size only (Syren Cloud / Phoenix Contact / Noida-Gurugram peers). Skip Amazon, Flipkart, FAANG, Big 4, Indian IT majors. Fully remote worldwide is still allowed. `python3 scripts/company_filter.py --company NAME`; log `skipped_company`.
+Company filter: mid-size only (Phoenix Contact / Noida-Gurugram peers / India-remote). Never apply to current employer Syren Cloud. Skip a company after 5 applied rows. Skip Amazon, Flipkart, FAANG, Big 4, Indian IT majors. Fully remote worldwide is still allowed. `python3 scripts/company_filter.py --company NAME`; log `skipped_company`. Naukri is discovery-only: apply on the company ATS, never Naukri Apply Now. Do not skip a whole board because one job is blocked.
 
 For each enabled platform: search, score (>= fit_threshold), apply within caps, 45–120s delay between applications.
 

@@ -2,7 +2,9 @@
 
 Location: fully remote worldwide OK. Hybrid/onsite only Gurugram / Noida / Delhi.
 
-Company tier: mid-size only (Syren Cloud, Phoenix Contact, NCR peers). Skip Amazon, Flipkart, FAANG, Big 4, Indian IT majors. `python3 scripts/company_filter.py --company NAME`.
+Company tier: mid-size only (Phoenix Contact, NCR peers, India-remote). Never Syren Cloud (current employer). Skip a company after 5 applied rows. Skip Amazon, Flipkart, FAANG, Big 4, Indian IT majors. Naukri = company-site only, never Apply Now. `python3 scripts/company_filter.py --company NAME`.
+
+2026-09-15 follow-up: 62-company shortlist in `config/company_shortlist.json`. Keka (ConveGenius Noida DS) and Lever (Level AI Noida ML) are live company-site applies that need CTC/notice and/or captcha — do not skip the rest of those ATS boards. Instahyre login 403 from this VM. Apify balance too low for Naukri scraper.
 
 Models: Cursor Grok / Composer only. Never `computerUse` (it billed Claude Sonnet 4.5 on 2026-09-10 even with `inherit`). Never Claude / GPT / Gemini / Muse.
 
