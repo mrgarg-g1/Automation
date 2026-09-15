@@ -36,6 +36,7 @@ Standard RUNBOOK §4 scoring. Instahyre shows salary bands and "remote" tags on 
 
 **Company tier:** skip Amazon, Flipkart, FAANG, Big 4, Indian IT majors, and other top-tier MNCs. Prefer Noida/Gurugram/Delhi mid-size firms like Syren Cloud and Phoenix Contact. `python3 scripts/company_filter.py --company "NAME"` — exit 1 → log `skipped_company`, do not apply.
 
+
 ## Apply
 
 1. Open listing → **Apply** (usually 1-click with the completed profile).

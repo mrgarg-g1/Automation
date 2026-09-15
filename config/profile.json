@@ -6,7 +6,9 @@
     "city": "Hyderabad",
     "country": "India",
     "open_to_remote": true,
-    "relocation": false
+    "remote_worldwide": true,
+    "relocation": false,
+    "hybrid_ok_cities": ["Gurugram", "Gurgaon", "Noida", "Delhi", "New Delhi", "NCR", "Delhi NCR"]
   },
   "links": {
     "linkedin": "https://linkedin.com/in/deepak-garg-in",
@@ -160,9 +162,10 @@
     "requires_sponsorship": "",
     "notice_period": "",
     "expected_salary": "",
-    "willing_to_relocate": "No"
+    "willing_to_relocate": "No — hybrid only in Gurugram / Noida / Delhi"
   },
   "extras": {
+    "otp_handoff": "Email OTP: read from connected Gmail (playbooks/gmail-otp.md) and fill. Never wait on the user. Never print the code. Captcha: notify immediately, log needs_user_action, continue other jobs. Do not solve captchas.",
     "publications": [
       "Reactive to Agentic: Next Gen AI Agent Transition Framework — IEEE ICAICCIT 2025",
       "Generative AI in Healthcare — book chapter, ISBN 9781032784847, 2025",

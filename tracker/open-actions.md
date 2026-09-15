@@ -82,3 +82,4 @@ User 2026-09-10: **no screenshots / no videos**. Watch the Cloud Agent live desk
 - Jobgether MLE + Binance Finance AI DS — skipped by user (captcha).
 - EnCharge AI Research Engineer, AI Models `4252539009` India remote-friendly — applied (Greenhouse HTTP 200 + Gmail OTP).
 - Hive Senior Software Engineer, Machine Learning `https://www.workatastartup.com/jobs/103933` — applied (WAAS Chrome CDP; Apply → Applied).
+

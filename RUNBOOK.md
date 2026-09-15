@@ -90,6 +90,7 @@ Location match means: **fully remote / WFH worldwide** (including outside India)
 
 Apply only when **score ≥ settings.fit_threshold** (default 60) **and** the company is allowed **and** the job is not already in the tracker (match on job URL, else normalized title+company). Keep a shortlist in the run summary: title, company, score, applied/skipped reason.
 
+
 ## 5. Applying
 
 - Follow the platform playbook click-by-click. Use browser snapshot refs; if the page changed vs the playbook, re-snapshot and adapt — do not blindly click stale refs.
@@ -125,4 +126,5 @@ Statuses: `applied`, `skipped_low_fit`, `skipped_duplicate`, `skipped_company`, 
 - Never solve captchas yourself. Notify immediately, continue other jobs, keep highlighting until the user fills them.
 - Email OTP: read from Gmail/Updates and fill. Do not pause the whole run on OTP.
 - Never launch Claude / GPT / Gemini / Muse / computerUse-on-Other-Models. Every new test and subagent is **Cursor Grok or Composer only**. If browser apply cannot stay on Cursor Grok, stop and report.
+
 - If the site's layout is nothing like the playbook after 2 adaptation attempts, mark `blocked` and move on — do not improvise through unknown multi-page forms.
