@@ -8,12 +8,14 @@ User 2026-09-10: skip Jobgether/Binance Lever picture captchas and keep applying
 
 | Job | Company | URL | What |
 |---|---|---|---|
-| AI/ML Engineer | EUROPEAN DYNAMICS | https://jobs.workable.com/view/idz8Yi9JAb3NehqKnjPkgW/remote-ai%2Fml-engineer-in-athens-at-european-dynamics | Cloudflare Turnstile |
-| AI Engineer | Youssef L | https://jobs.workable.com/view/oWbDXQHaTCsniQ9JzCGake/remote-ai-engineer-in-casablanca-settat-at-youssef-l | Turnstile / submit hang |
-| AI Engineer | Portless | https://jobs.workable.com/view/boRuEDWWy88rZ2DjiiwZy1/remote-ai-engineer-in-united-states-at-portless | Turnstile / submit hang |
+| AI & NLP Research Solutions Engineer | Acclaro | https://jobs.workable.com/view/uvQwufp3HmJyxRppCwvwwG/hybrid-ai-%26-nlp-research-solutions-engineer-in-noida-at-acclaro | **LIVE DESKTOP NOW** — form filled + resume +91; Submit hung on Cloudflare Turnstile. Click the checkbox. |
+| AI/ML Engineer | EUROPEAN DYNAMICS | https://jobs.workable.com/view/idz8Yi9JAb3NehqKnjPkgW/remote-ai%2Fml-engineer-in-athens-at-european-dynamics | Cloudflare Turnstile (old; do not pile another tab) |
+| AI Engineer | Youssef L | https://jobs.workable.com/view/oWbDXQHaTCsniQ9JzCGake/remote-ai-engineer-in-casablanca-settat-at-youssef-l | Turnstile / submit hang (old) |
+| AI Engineer | Portless | https://jobs.workable.com/view/boRuEDWWy88rZ2DjiiwZy1/remote-ai-engineer-in-united-states-at-portless | Turnstile / submit hang (old) |
 | Senior Machine Learning Engineer (Bangalore/Noida) | Level AI | https://jobs.lever.co/levelai/55ba7aee-57ff-440c-91a4-58bcafcd10a8/apply | Lever hCaptcha (Noida listed) |
 | Data Scientist | ConveGenius | https://convegenius.keka.com/careers/applyjob/149252 | Keka image captcha **and** CTC/notice |
-| GenAI / AI-ML Engineer | Two95 International Inc. | https://jobs.workable.com/view/mNpscGkGE3CWW9hguwr8dk/genai-%2F-ai-ml-engineer-in-gurugram-at-two95-international-inc. | Workable Turnstile — **tab is open now on the live desktop**, form already filled + resume. Click the checkbox and Submit. |
+
+Two95 Gurugram GenAI/AI-ML is **applied** (thank-you modal after user Turnstile). Do not re-apply.
 
 ## Company policy (user 2026-09-15 follow-up)
 
@@ -38,14 +40,19 @@ Set `profile.screening_answers.expected_salary`, `notice_period`. Until then ski
 | Senior AI Engineer | FourKites | https://job-boards.greenhouse.io/fourkites/jobs/7981512 |
 | Senior Data Scientist | FourKites | https://job-boards.greenhouse.io/fourkites/jobs/8146530 |
 | MLE II Applied Research | PathAI | https://job-boards.greenhouse.io/pathai/jobs/8696752002 |
+| Senior AI Engineer | Nacre Capital | https://jobs.workable.com/view/tqLo3KJY51BMJrg8fQd5x6/remote-senior-ai-engineer-in-india-at-nacre-capital |
+| AI Engineer / AI Automation Specialist | Pavago | https://jobs.workable.com/view/6pTQSCLxyxucQPNBbqaGd5/remote-ai-engineer-%2F-ai-automation-specialist-in-india-at-pavago |
+| AI Engineer - Agentic AI & Automation | LUXASIA | https://jobs.workable.com/view/wgKoBPh9bL82yV8MWVSLMF/hybrid-ai-engineer---agentic-ai-%26-automation-in-delhi-at-luxasia |
+| Senior Data Scientist - Credit Risk | Funding Societies | https://jobs.workable.com/view/6LZNYpDuPXAuqsS5naTWkP/hybrid-senior-data-scientist---credit-risk-in-delhi-at-funding-societies-%7C-modalku-group |
+| Data Scientist | Weekday AI | https://jobs.workable.com/view/dmgXbVFH59reFLC9vp8RCw/data-scientist-in-noida-at-weekday-ai |
 
 Also set `profile.screening_answers.requires_sponsorship` (PathAI US work-auth questions). Until then skip PathAI.
 
-**i2e Consulting Remote DS form is filled on the live desktop** except Current CTC, Expected CTC, Notice Period: https://www.i2econsulting.com/jobs/data-scientist-sr-data-scientist — type those three and click Submit Application.
+**i2e Consulting Remote DS form is filled on the live desktop** except Current CTC, Expected CTC, Notice Period: https://www.i2econsulting.com/jobs/data-scientist-sr-data-scientist — type those three and click Submit Application. User said “done” after Two95; i2e CTC fields were still empty so it was **not** submitted.
 
 ## Next Instahyre (login failing)
 
-Login page **403** from this VM; stored password still not usable. Set `INSTAHYRE_PASSWORD` in Cloud Agent secrets. After login, apply on Instahyre 1-click **or** the company ATS from the shortlist (preferred).
+Chrome job pages load; Apply redirects to signup. Login still **Password you entered is incorrect**. Set `INSTAHYRE_PASSWORD` in Cloud Agent secrets. After login, apply on Instahyre 1-click **or** the company ATS from the shortlist (preferred).
 
 | Job | Company | URL |
 |---|---|---|
