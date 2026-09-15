@@ -47,3 +47,4 @@ One careful attempt: fill obvious fields from profile, upload resume if asked. I
 - Every field value comes from `profile.json` / `credentials.env` — never invent.
 - EEO/demographic voluntary questions: choose "Decline to self-identify" options when present; if forced, STOP and ask the user.
 - Legal questions (authorization, sponsorship, non-compete): only from `profile.screening_answers`; unknown → STOP and ask.
+- Company tier: `python3 scripts/company_filter.py --company "NAME"` before submit. Exit 1 → `skipped_company`, do not apply (Amazon/Flipkart-class MNCs).

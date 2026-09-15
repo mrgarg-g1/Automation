@@ -16,7 +16,7 @@ Cutshort candidate login also showed Turnstile — skipped, no extra tab piled.
 
 ## Skip (user 2026-09-10)
 
-- **Naukri and LinkedIn** — already applied; do not apply there (also skip Hirist leftovers).
+- **Amazon, Flipkart, FAANG, Big 4, Indian IT majors, Coinbase/Databricks/GitLab-class MNCs** — user 2026-09-15: mid-size only (Syren Cloud, Phoenix Contact, Noida/Gurugram peers). Instahyre queued **Amazon** Senior ML Engineer is ineligible. `python3 scripts/company_filter.py`.
 - **Jobgether Lever MLE** `d5ccb68f` and **Binance Lever Finance AI DS** `3c553d93` — user said skip the open captchas. Logged `blocked` / `captcha_skipped_by_user`. Do not wait on those tabs. Prefer Greenhouse HTTP (no picture captcha).
 - **ZipRecruiter** — `enabled: false`. 14/14 attempts failed (100% > 80% skip rule). Email OTP + computerUse banned. Do not search, login, or apply.
 - **protocol_jobs** — `enabled: false`. 7/7 attempts failed (100% > 80% skip rule). Lever captcha / empty boards. Do not search or apply.
@@ -55,10 +55,10 @@ Stored Instahyre password is rejected (`Password you entered is incorrect`). 8/8
 | AI / ML Engineer | Azisly | https://www.instahyre.com/job-442377-ai-ml-engineer-at-azisly-gurgaon/ | 4-8 Gurgaon |
 | Senior Data Scientist | Eucloid Data Solutions | https://www.instahyre.com/job-442185-senior-data-scientist-at-eucloid-data-solutions-chennai-gurgaon/ | 3-5 Gurgaon (+Chennai) |
 | AI Product Engineer | DISCO | https://www.instahyre.com/job-421516-ai-product-engineer-at-disco-work-from-home/ | 3-7 WFH |
-| Senior ML Engineer | Amazon | https://www.instahyre.com/job-420139/ | 3-7 NCR |
 | Data Scientist | Arintra | https://www.instahyre.com/job-436220/ | 4-8 Noida |
-| AI Engineer | IDFC FIRST Bank | https://www.instahyre.com/job-398232/ | 3-7 Gurgaon |
 | Computer Vision Engineer | Goldcast | https://www.instahyre.com/job-435862/ | 1-5 Noida |
+
+Dropped from this queue (top-tier / MNC): Amazon Senior ML Engineer, IDFC FIRST Bank AI Engineer.
 
 Skip already-applied Instahyre: SYDIAI, DataNimbus, Commotion, Telomere, FourKites, Nablon, Kahuna, Zynix.
 

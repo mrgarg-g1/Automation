@@ -15,7 +15,7 @@ python scripts/load_secrets.py
 
 - `config/profile.json` — candidate profile. Ready when `full_name` is `"Deepak Garg"`. Empty name/skills means a **stale checkout**, not a missing resume. Do not tell the user to "fill the template" if GitHub already has the profile; tell them to set repo `mrgarg-g1/Automation` branch `main` and update the Cloud Agent environment.
 - `resume/Resume.pdf` — canonical PDF to attach. It is tracked in git (not ignored).
-- `config/settings.json` — caps, queries, fit threshold, rotation.
+- `config/settings.json` — caps, queries, fit threshold, rotation, `company_filter` (mid-size only).
 - Credentials — **never committed to GitHub**. Resolve them in this order:
   1. `python scripts/load_secrets.py` (writes `config/credentials.env` from Cursor Cloud Agent secrets `MASTER_EMAIL` / `MASTER_PASSWORD`).
   2. If `config/credentials.env` already exists (local run), leave it.
@@ -86,7 +86,9 @@ For each platform, run the playbook's search URLs (built from `settings.json →
 
 Location match means: **fully remote / WFH worldwide** (including outside India), or **hybrid/onsite in Gurugram, Noida, or Delhi (NCR) only**. Hybrid or onsite anywhere else (US office days, Bangalore, Hyderabad office, Chennai office, etc.) does **not** get location points and should be skipped unless the listing is also fully remote.
 
-Apply only when **score ≥ settings.fit_threshold** (default 60) **and** the job is not already in the tracker (match on job URL, else normalized title+company). Keep a shortlist in the run summary: title, company, score, applied/skipped reason.
+**Company tier (hard skip, before the numeric score):** only mid-size employers — like Syren Cloud, Phoenix Contact, and similar Noida/Gurugram/Delhi firms. Skip Amazon, Flipkart, FAANG, Big 4, TCS/Infosys/Wipro-class IT majors, and other household MNCs/unicorns. Run `python3 scripts/company_filter.py --company "NAME"` (exit 1 = skip). Log `skipped_company` with note `top_tier_mnc`. Prefer NCR mid-size listings on Instahyre (Gurgaon/Noida/Delhi) over global mega-cap remote roles.
+
+Apply only when **score ≥ settings.fit_threshold** (default 60) **and** the company is allowed **and** the job is not already in the tracker (match on job URL, else normalized title+company). Keep a shortlist in the run summary: title, company, score, applied/skipped reason.
 
 ## 5. Applying
 
@@ -106,7 +108,7 @@ Every attempt (applied, skipped-with-reason, blocked) gets a row:
 python scripts/tracker.py add --platform ziprecruiter --title "..." --company "..." --url "..." --status applied --score 78 --notes "1-click"
 ```
 
-Statuses: `applied`, `skipped_low_fit`, `skipped_duplicate`, `blocked`, `failed`, `signup_done`, `needs_user_action`.
+Statuses: `applied`, `skipped_low_fit`, `skipped_duplicate`, `skipped_company`, `blocked`, `failed`, `signup_done`, `needs_user_action`.
 
 ## 7. End-of-run report (always print)
 
@@ -122,5 +124,5 @@ Statuses: `applied`, `skipped_low_fit`, `skipped_duplicate`, `blocked`, `failed`
 - Never store or echo passwords in chat/tracker. Reference credentials only from `credentials.env`.
 - Never solve captchas yourself. Notify immediately, continue other jobs, keep highlighting until the user fills them.
 - Email OTP: read from Gmail/Updates and fill. Do not pause the whole run on OTP.
-- Never launch Claude / GPT / Gemini / computerUse-on-Other-Models. If browser apply cannot stay on Cursor Grok, stop and report.
+- Never launch Claude / GPT / Gemini / Muse / computerUse-on-Other-Models. Every new test and subagent is **Cursor Grok or Composer only**. If browser apply cannot stay on Cursor Grok, stop and report.
 - If the site's layout is nothing like the playbook after 2 adaptation attempts, mark `blocked` and move on — do not improvise through unknown multi-page forms.

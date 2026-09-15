@@ -32,7 +32,9 @@ Also check the "Remote" filter chip. Sort by relevance/date if offered.
 
 Standard RUNBOOK §4 scoring. Instahyre shows salary bands and "remote" tags on cards — use them. Skip roles requiring immediate joining if `profile.screening_answers.notice_period` is long.
 
-**Location rule:** apply to Work From Home / Remote anywhere. For hybrid or office roles, apply **only** if the city is Gurugram/Gurgaon, Noida, or Delhi. Skip hybrid/onsite in Bangalore, Chennai, Hyderabad, Mumbai, Pune, or anywhere outside NCR.
+**Location rule:** apply to Work From Home / Remote anywhere **if the employer is mid-size** (see `company_filter`). For hybrid or office roles, apply **only** if the city is Gurugram/Gurgaon, Noida, or Delhi. Skip hybrid/onsite in Bangalore, Chennai, Hyderabad, Mumbai, Pune, or anywhere outside NCR.
+
+**Company tier:** skip Amazon, Flipkart, FAANG, Big 4, Indian IT majors, and other top-tier MNCs. Prefer Noida/Gurugram/Delhi mid-size firms like Syren Cloud and Phoenix Contact. `python3 scripts/company_filter.py --company "NAME"` — exit 1 → log `skipped_company`, do not apply.
 
 ## Apply
 

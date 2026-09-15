@@ -48,5 +48,7 @@ Each run, the Cursor agent:
 - Daily + per-platform caps with randomized 45–120s delays between applications.
 - Never re-applies to a job already in the tracker (URL + title+company dedupe).
 - Skips jobs below the resume-fit threshold — no spray-and-pray.
+- Skips Amazon / Flipkart / other top-tier MNCs; targets mid-size firms like Syren Cloud and Phoenix Contact (`python3 scripts/company_filter.py`).
+- Cursor Grok / Composer only — never Claude, GPT, Gemini, or computerUse-on-Other-Models.
 - Skips platforms whose apply-attempt failure rate is above 80% (`python3 scripts/tracker.py health`).
 - Stops and asks you on: captcha, email/phone verification, payment walls (FlexJobs), ambiguous screening questions, or any ToS-sensitive prompt.

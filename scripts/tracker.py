@@ -22,8 +22,8 @@ TRACKER = os.path.join(ROOT, "tracker", "applications.csv")
 SETTINGS = os.path.join(ROOT, "config", "settings.json")
 FIELDS = ["date", "platform", "title", "company", "url", "status", "score", "notes"]
 VALID_STATUSES = {
-    "applied", "skipped_low_fit", "skipped_duplicate", "blocked",
-    "failed", "signup_done", "needs_user_action",
+    "applied", "skipped_low_fit", "skipped_duplicate", "skipped_company",
+    "blocked", "failed", "signup_done", "needs_user_action",
 }
 # Real apply attempts only. skipped_* / signup_done do not count toward failure %.
 ATTEMPT_STATUSES = {"applied", "blocked", "failed", "needs_user_action"}
@@ -160,7 +160,7 @@ def cmd_health(a):
         return
     print(
         f"skip if failure > {fail_pct}% with at least {min_attempts} apply attempts "
-        "(skipped_low_fit / skipped_duplicate / signup_done do not count)"
+        "(skipped_low_fit / skipped_duplicate / skipped_company / signup_done do not count)"
     )
     print(
         f"{'platform':<16} {'applied':>8} {'fail':>6} {'attempts':>9} {'fail%':>7}  "
