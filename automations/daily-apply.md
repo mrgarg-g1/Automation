@@ -9,6 +9,7 @@ Cloud runs check out this GitHub repo. Playbooks live in git. **Passwords do not
 | Playbooks, settings, tracker | This GitHub repo | Automation **Select repository** → `mrgarg-g1/Automation` |
 | ZipRecruiter / Instahyre email+password | Cursor **Cloud Agent Secrets** | Injected as env vars; `python scripts/load_secrets.py` writes `credentials.env` at run start |
 | Apify API token | Automation **Tools → Apify** (already connected) | Agent calls the connected Apify tool; token is not in git |
+| Apify fallback | Raise Apify monthly cap, **or** Tools → Firecrawl / Bright Data / Browserbase | See `playbooks/discovery.md`. Never paste tokens in chat |
 | Application OTPs | Automation **Tools → Gmail** (Updates / inbox) | Agent reads the latest code from Gmail and fills it. Never commit mail. |
 
 Add secrets at [cursor.com/dashboard/cloud-agents](https://cursor.com/dashboard/cloud-agents) as **Runtime Secrets** (so values stay out of the transcript):
@@ -39,7 +40,7 @@ Then read and follow, in order:
 5. tracker/applications.csv + tracker/open-actions.md — never re-apply; keep highlighting open captchas/OTPs.
 6. playbooks/*.md — including playbooks/gmail-otp.md (Gmail is Tools → Gmail, same as Apify).
 
-Use connected Apify for search. Use connected Gmail read tools for OTPs (discover the Gmail namespace every run; do not hard-code a stale tool id). Never launch Claude or computerUse.
+Use connected Apify for search. If Apify is over quota, follow playbooks/discovery.md (Greenhouse API, Chrome, WebSearch; Firecrawl/Bright Data if connected). Use connected Gmail read tools for OTPs (discover the Gmail namespace every run; do not hard-code a stale tool id). Never launch Claude or computerUse.
 
 Company filter: mid-size only (Phoenix Contact / Noida-Gurugram peers / India-remote). Never apply to current employer Syren Cloud. Skip a company after 5 applied rows. Skip Amazon, Flipkart, FAANG, Big 4, Indian IT majors. Fully remote worldwide is still allowed. `python3 scripts/company_filter.py --company NAME`; log `skipped_company`. Naukri is discovery-only: apply on the company ATS, never Naukri Apply Now. Do not skip a whole board because one job is blocked.
 

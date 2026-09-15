@@ -60,6 +60,8 @@ python scripts/load_secrets.py
 
 ## 4. Job discovery & fit scoring
 
+Use connected Apify for search when it works. If Apify returns **monthly usage hard limit exceeded**, follow `playbooks/discovery.md` (Greenhouse public API, Chrome, WebSearch; optional Firecrawl / Bright Data MCP). Do not stop the run.
+
 For each platform, run the playbook's search URLs (built from `settings.json → search`). For each candidate job, score fit against the profile:
 
 | Signal | Points |

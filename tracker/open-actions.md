@@ -16,9 +16,19 @@ Gmail confirmed the rest of the captcha batch (ProcDNA, Funding Societies, Nacre
 
 **32/30 applied today** (captcha backlog counted after Gmail confirm). No more new applies until tomorrow.
 
-## Apify quota
+## Apify quota / alternative
 
-Still `Monthly usage hard limit exceeded`. Raise the monthly spend cap in Apify Console billing (same connected account). Do not paste a token. ZipRecruiter search results did load in Chrome this pass, but 1-click needs login/OTP and the daily cap is already full.
+Still `Monthly usage hard limit exceeded`. Do **not** paste a token in chat.
+
+**Easiest:** raise the monthly spend cap in [Apify Console billing](https://console.apify.com/billing) (same connected account).
+
+**Or connect one MCP** on this automation (Tools →, same place as Apify/Gmail):
+
+1. **Firecrawl** — fetch listing pages (closest to `apify/web-fetch`)
+2. **Bright Data** — residential scrape for Naukri / ZipRecruiter / Remote.co
+3. **Browserbase** — hosted browser for Cloudflare/Akamai listing pages
+
+Until then, discovery uses Greenhouse public API + Chrome + WebSearch (`playbooks/discovery.md`). ZipRecruiter search results did load in Chrome this pass; 1-click still needs login/OTP. Daily cap is full today.
 
 ## Screening (do not ask again)
 
