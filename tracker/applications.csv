@@ -93,3 +93,14 @@ date,platform,title,company,url,status,score,notes
 2026-09-10T11:28:21,remote_co,Langchain Deployment AI Engineer,Nexaminds,https://job-boards.greenhouse.io/nexaminds/jobs/5218253007,blocked,70.0,required current salary empty in profile; do not invent
 2026-09-10T11:28:21,remote_co,Data Engineer (India),Intelligence Factory,https://www.workatastartup.com/jobs/100368,skipped_low_fit,40.0,Pune onsite; hybrid/onsite only Gurugram/Noida/Delhi
 
+2026-09-15T04:42:39,instahyre,account,instahyre,https://www.instahyre.com/login/,blocked,0.0,password_incorrect stored INSTAHYRE/MASTER password still rejected 2026-09-15; cannot 1-click apply
+2026-09-15T04:42:39,remote_co,Data Scientist,WorldQuant,https://job-boards.greenhouse.io/worldquant/jobs/4703128006,blocked,75.0,ats_greenhouse New_Delhi_onsite HTTP POST 400 recaptcha_enterprise; presign 404; computerUse banned
+2026-09-15T04:42:39,remote_co,AI Engineer,NK Securities Research,https://job-boards.eu.greenhouse.io/nksecuritiesresearch/jobs/4811652101,needs_user_action,80.0,Gurugram_onsite mid-size; required notice_period current_CTC expected_CTC JEE/Codeforces; do not invent
+2026-09-15T04:42:39,remote_co,Data Scientist,Insurity India,https://job-boards.greenhouse.io/insurityindia/jobs/4300524009,needs_user_action,70.0,Noida_hybrid; required notice_period current_compensation; do not invent
+2026-09-15T04:42:39,remote_co,Applied AI Engineer,Dwelly,https://job-boards.eu.greenhouse.io/dwelly/jobs/4954106101,blocked,70.0,UK_remote HQ_London; required notice_period and right_to_work; skip
+2026-09-15T04:42:39,remote_co,ML Engineer,Orcrist Technologies,https://job-boards.eu.greenhouse.io/orcristtechnologies/jobs/4719369101,blocked,65.0,Germany_work_auth_required plus salary_expectations empty in profile
+2026-09-15T04:42:39,remote_co,Data Scientist - Python + Deterministic Analytics,Capco,https://job-boards.greenhouse.io/capco/jobs/7981841,skipped_low_fit,40.0,multi-city India onsite includes Bangalore/Mumbai/Pune/Chennai; hybrid/onsite only NCR
+2026-09-15T04:42:39,remote_co,Lead Voice AI Engineer,Simpplr,https://job-boards.greenhouse.io/simpplr/jobs/6161156004,skipped_low_fit,40.0,Lead seniority + Gurugram/Bengaluru hybrid; skip
+2026-09-15T04:42:39,remote_co,Data Science & Analytics Intern - Fall 2026,Phoenix Contact,https://boards.greenhouse.io/phoenixcontact/jobs/7964865003,skipped_low_fit,20.0,US_PA intern; Phoenix Contact India DS/ML not on this Greenhouse board
+2026-09-15T04:42:39,instahyre,Data Scientist,M3AI,https://www.instahyre.com/job-440216-data-scientist-at-m3ai-delhi-gurgaon-noida/,blocked,85.0,NCR mid-size 3-6 YOE fit; blocked on instahyre_password_incorrect
+2026-09-15T04:42:39,instahyre,AI / ML Engineer,Azisly,https://www.instahyre.com/job-442377-ai-ml-engineer-at-azisly-gurgaon/,blocked,80.0,Gurgaon mid-size 4-8 YOE fit; blocked on instahyre_password_incorrect

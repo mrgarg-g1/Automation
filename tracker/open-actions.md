@@ -31,7 +31,14 @@ Coinbase Senior MLE India `7739592` returned Greenhouse 428 (`captcha-failed` / 
 
 ## Unanswered screening (do not guess)
 
-Set `profile.screening_answers.requires_sponsorship` (Yes/No). Until then skip **US/EU** jobs that ask visa sponsorship, including:
+Set `profile.screening_answers.expected_salary`, `notice_period`, and `requires_sponsorship` (Yes/No). Until salary/notice are filled, skip forms that require CTC/notice, including:
+
+| Job | Company | URL |
+|---|---|---|
+| AI Engineer | NK Securities Research | https://job-boards.eu.greenhouse.io/nksecuritiesresearch/jobs/4811652101 |
+| Data Scientist | Insurity India | https://job-boards.greenhouse.io/insurityindia/jobs/4300524009 |
+
+Until `requires_sponsorship` is set, skip **US/EU** jobs that ask visa sponsorship, including:
 
 | Job | Company | URL |
 |---|---|---|
@@ -46,15 +53,21 @@ Also still empty: `expected_salary`, `notice_period`. Required-salary/notice for
 
 ## Next Instahyre (site login currently failing)
 
-Stored Instahyre password is rejected (`Password you entered is incorrect`). 8/8 already applied today on this account earlier. Queued jobs below stay for after login works:
+**2026-09-15:** stored Instahyre password is still rejected (`Password you entered is incorrect`). Update `INSTAHYRE_PASSWORD` (or master password if that is what Instahyre uses) in Cloud Agent secrets. Daily cap is not the blocker today — login is. Queued mid-size NCR/remote fits after login works:
 
 | Job | Company | URL | YOE / loc |
 |---|---|---|---|
+| Data Scientist | M3AI | https://www.instahyre.com/job-440216-data-scientist-at-m3ai-delhi-gurgaon-noida/ | 3-6 Delhi/Gurgaon/Noida |
+| AI / ML Engineer | Azisly | https://www.instahyre.com/job-442377-ai-ml-engineer-at-azisly-gurgaon/ | 4-8 Gurgaon |
+| Machine Learning Engineer | ConveGenius | https://www.instahyre.com/job-435105-machine-learning-engineer-at-convegenius-noida/ | 5-9 Noida |
+| Senior AI Engineer | Bloom AI | https://www.instahyre.com/job-442873-senior-ai-engineer-at-bloom-ai-delhi/ | 3-7 Delhi |
+| Senior AI Engineer | VerbaFlo | https://www.instahyre.com/job-439863-senior-ai-engineer-at-verbaflo-gurgaon/ | 5-9 Gurgaon |
+| Sr. Machine Learning Engineer | DISCO | https://www.instahyre.com/job-440775-sr-machine-learning-engineer-at-disco-work-from-home/ | WFH |
+| Machine Learning Engineer | Hoomanely | https://www.instahyre.com/job-417013-machine-learning-engineer-at-hoomanely-work-from-home/ | WFH |
+| Senior Machine Learning Engineer | Portcast | https://www.instahyre.com/job-439311-senior-machine-learning-engineer-at-portcast-work-from-home/ | WFH |
 | AL / ML Engineer | DISCO | https://www.instahyre.com/job-423265-al-ml-engineer-at-disco-work-from-home/ | 4-8 WFH |
 | AI Engineer (Backend) | Tekion | https://www.instahyre.com/job-441127-ai-engineer-backend-at-tekion-work-from-home/ | 5-9 WFH Agentic/LLM |
-| AI / ML Engineer | Azisly | https://www.instahyre.com/job-442377-ai-ml-engineer-at-azisly-gurgaon/ | 4-8 Gurgaon |
 | Senior Data Scientist | Eucloid Data Solutions | https://www.instahyre.com/job-442185-senior-data-scientist-at-eucloid-data-solutions-chennai-gurgaon/ | 3-5 Gurgaon (+Chennai) |
-| AI Product Engineer | DISCO | https://www.instahyre.com/job-421516-ai-product-engineer-at-disco-work-from-home/ | 3-7 WFH |
 | Data Scientist | Arintra | https://www.instahyre.com/job-436220/ | 4-8 Noida |
 | Computer Vision Engineer | Goldcast | https://www.instahyre.com/job-435862/ | 1-5 Noida |
 
@@ -66,7 +79,9 @@ Skip already-applied Instahyre: SYDIAI, DataNimbus, Commotion, Telomere, FourKit
 
 Greenhouse embed POST returns **428 + Gmail security code** only on a small set of boards (Coinbase, NewRocket/`highmetric`, EnCharge `enchargeai36`, Gusto, PlanetScale, Neuralink, Akoya). ~95% of other Greenhouse boards return **400** (reCAPTCHA enterprise) — skip those; do not solve captchas.
 
-Live leftover on OTP boards that still fail fit/visa/location: Coinbase Senior MLE India `7739592` (`otp_gmail_miss` this pass); highmetric ServiceNow AI Engineer `6177423004` (no ServiceNow skill); highmetric US/UK/NL Anthropic FDE roles (visa or Senior/Lead); EnCharge AI Compiler Engineer India `4008053009` (compiler/MLIR, not DS/ML). GitLab AI Engineer `8556658002` Bangalore. Do not retry Ashby from this VM.
+**2026-09-15 Greenhouse:** WorldQuant Data Scientist New Delhi `4703128006` HTTP POST **400** (reCAPTCHA enterprise; resume presign 404). Same as ~95% of GH boards — do not retry without a Grok-pinnable browser. Coinbase/Databricks/GitLab remain company-filter banned. Phoenix Contact US Greenhouse board has no India DS/ML (only a Pennsylvania intern). Syren Cloud careers URLs were 403/404 from this VM.
+
+Live leftover on OTP boards that still fail fit/visa/location: Coinbase Senior MLE India `7739592` is **skipped_company** now (ban list); highmetric ServiceNow AI Engineer `6177423004` (no ServiceNow skill); highmetric US/UK/NL Anthropic FDE roles (visa or Senior/Lead); EnCharge AI Compiler Engineer India `4008053009` (compiler/MLIR, not DS/ML). GitLab AI Engineer `8556658002` Bangalore. Do not retry Ashby from this VM.
 
 Workable: **applied** RealAdvisor Data Scientist earlier this run (HTTP 201). Later submits from this IP/profile hang on Turnstile even on a fresh Chrome user-data-dir — stop Workable until the captcha queue is cleared. Greenhouse OTP India mid-level already applied; other GH boards still **400 recaptcha**. Instahyre master password still rejected. **YC WAAS profile finished; Hive Senior SWE ML applied.** Remaining featured WAAS eng jobs are US-citizen/onsite/Pune.
 
