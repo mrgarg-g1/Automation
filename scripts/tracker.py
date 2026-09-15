@@ -18,8 +18,8 @@ from datetime import datetime, timedelta
 TRACKER = os.path.join(os.path.dirname(__file__), "..", "tracker", "applications.csv")
 FIELDS = ["date", "platform", "title", "company", "url", "status", "score", "notes"]
 VALID_STATUSES = {
-    "applied", "skipped_low_fit", "skipped_duplicate", "blocked",
-    "failed", "signup_done", "needs_user_action",
+    "applied", "skipped_low_fit", "skipped_duplicate", "skipped_company",
+    "blocked", "failed", "signup_done", "needs_user_action",
 }
 
 

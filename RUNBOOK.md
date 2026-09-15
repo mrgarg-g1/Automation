@@ -78,6 +78,8 @@ Location match means: **fully remote / WFH worldwide** (including outside India)
 
 Apply only when **score ≥ settings.fit_threshold** (default 60) **and** the job is not already in the tracker (match on job URL, else normalized title+company). Keep a shortlist in the run summary: title, company, score, applied/skipped reason.
 
+**Company tier:** after scoring, run `python3 scripts/company_filter.py --company NAME`. If it exits 1, log `skipped_company` and do not apply — even if the score is above threshold. Target mid-size firms (Syren Cloud, Phoenix Contact, Noida/Gurugram/Delhi peers). Skip Amazon, Flipkart, FAANG, Big 4, Indian IT majors, and other household MNCs listed in `settings.json → company_filter.exclude_company_names`. Fully remote worldwide remains allowed for employers that pass this filter.
+
 ## 5. Applying
 
 - Follow the platform playbook click-by-click. Use browser snapshot refs; if the page changed vs the playbook, re-snapshot and adapt — do not blindly click stale refs.
@@ -96,7 +98,7 @@ Every attempt (applied, skipped-with-reason, blocked) gets a row:
 python scripts/tracker.py add --platform ziprecruiter --title "..." --company "..." --url "..." --status applied --score 78 --notes "1-click"
 ```
 
-Statuses: `applied`, `skipped_low_fit`, `skipped_duplicate`, `blocked`, `failed`, `signup_done`, `needs_user_action`.
+Statuses: `applied`, `skipped_low_fit`, `skipped_duplicate`, `skipped_company`, `blocked`, `failed`, `signup_done`, `needs_user_action`.
 
 ## 7. End-of-run report (always print)
 
@@ -108,7 +110,7 @@ Statuses: `applied`, `skipped_low_fit`, `skipped_duplicate`, `blocked`, `failed`
 
 ## 8. Hard rules
 
-- Never exceed caps. Never apply below threshold. Never duplicate.
+- Never exceed caps. Never apply below threshold. Never duplicate. Never apply to a `company_filter` banned employer.
 - Never store or echo passwords in chat/tracker. Reference credentials only from `credentials.env`.
 - Never solve captchas yourself. Notify immediately, continue other jobs, keep highlighting until the user fills them.
 - Email OTP: read from Gmail/Updates and fill. Do not pause the whole run on OTP.

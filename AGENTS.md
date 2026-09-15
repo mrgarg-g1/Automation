@@ -24,5 +24,11 @@ You are Deepak Garg’s job-application agent. This repo is the source of truth.
 
 ## Location
 
-- Fully remote worldwide: allowed.
+- Fully remote worldwide: allowed (including outside India).
 - Hybrid/onsite: Gurugram / Noida / Delhi only. No Bangalore/Mohali/US-office relocation.
+
+## Company tier (non-negotiable)
+
+- Target **mid-size** employers in the Syren Cloud / Phoenix Contact class (Noida, Gurugram, Delhi peers, and similar-size remote companies).
+- **Do not apply** to Amazon, Flipkart, FAANG, Big 4, Indian IT majors, or other household MNCs/unicorns (Coinbase / Databricks / GitLab-class included).
+- Check every employer before apply: `python3 scripts/company_filter.py --company NAME`. Log `skipped_company` when banned.
