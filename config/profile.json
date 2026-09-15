@@ -165,7 +165,7 @@
     "willing_to_relocate": "No — hybrid only in Gurugram / Noida / Delhi"
   },
   "extras": {
-    "otp_handoff": "If a platform asks for email OTP, captcha, or 2FA, pause and ask the user; they will share the code. Do not mark blocked on the first OTP.",
+    "otp_handoff": "Email OTP: read from connected Gmail (playbooks/gmail-otp.md) and fill. Never wait on the user. Never print the code. Captcha: notify immediately, log needs_user_action, continue other jobs. Do not solve captchas.",
     "publications": [
       "Reactive to Agentic: Next Gen AI Agent Transition Framework — IEEE ICAICCIT 2025",
       "Generative AI in Healthcare — book chapter, ISBN 9781032784847, 2025",

@@ -16,7 +16,8 @@ No account needed to browse or apply (applications happen on the employer's site
 
 ## Qualify
 
-1. Open listing, score per RUNBOOK §4.
+1. Open listing, score per RUNBOOK §4. Skip if `python3 scripts/company_filter.py --company "NAME"` exits 1 (Amazon/Flipkart-class MNC). Log `skipped_company`.
+
 2. Fully remote / "anywhere" is OK worldwide (including outside India). **Hybrid** listings are OK only for Gurugram, Noida, or Delhi. Skip US hybrid office-days (e.g. Texas/Arizona/Florida) and other non-NCR hybrid.
 3. Skip listings marked as "anywhere in the world **with restrictions**" if they require US citizenship or exclude India. Time-zone overlap is OK.
 4. Check the posting date on the listing page; skip anything older than `search.posted_within_days`.

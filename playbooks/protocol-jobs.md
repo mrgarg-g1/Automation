@@ -1,5 +1,7 @@
 # Playbook — Protocol / Web3 boards
 
+**DISABLED** in `config/settings.json` (2026-09-10): 7/7 apply attempts failed (100% > 80% skip rule). Lever captcha / empty Protocol Labs boards. Do not search or apply here until a working HTTP apply path exists and the user re-enables the platform.
+
 Base candidates (verify at runtime; pick the one the user means — default to the first):
 
 - `https://protocol.ai/join/` (Protocol Labs careers — Greenhouse-hosted)

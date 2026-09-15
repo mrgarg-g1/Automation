@@ -1,5 +1,7 @@
 # Playbook — ZipRecruiter
 
+**DISABLED** in `config/settings.json` (2026-09-10): 14/14 apply attempts failed (100% > 80% skip rule). Email OTP login; computerUse banned. Do not search or apply here until a working no-browser path exists and the user re-enables the platform.
+
 Base: `https://www.ziprecruiter.com`
 
 ## Signup (only if login fails / no account)
@@ -26,7 +28,7 @@ https://www.ziprecruiter.com/jobs-search?search=<ROLE>&location=<LOCATION_OR_Rem
 - One search per role in `search.roles` (stop that role's listing when its platform cap share is met).
 - Sort by date when the sort control exists.
 - Fully remote US/global listings are OK. Hybrid/onsite: only Gurugram, Noida, Delhi — skip US-city hybrid.
-- Email OTP: pause and ask the user for the code (they will share it); do not abandon the platform on the first OTP.
+- Email OTP: Gmail read and fill (RUNBOOK §3). Do not abandon the platform on the first OTP.
 
 ## Qualify
 
