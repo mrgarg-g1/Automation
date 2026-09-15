@@ -36,6 +36,9 @@ Set `profile.screening_answers.expected_salary`, `notice_period`. Until then ski
 | Data Scientist | ConveGenius | https://convegenius.keka.com/careers/applyjob/149252 |
 | Senior AI Engineer | FourKites | https://job-boards.greenhouse.io/fourkites/jobs/7981512 |
 | Senior Data Scientist | FourKites | https://job-boards.greenhouse.io/fourkites/jobs/8146530 |
+| MLE II Applied Research | PathAI | https://job-boards.greenhouse.io/pathai/jobs/8696752002 |
+
+Also set `profile.screening_answers.requires_sponsorship` (PathAI US work-auth questions). Until then skip PathAI.
 
 ## Next Instahyre (login failing)
 
@@ -60,7 +63,15 @@ Skip already-applied Instahyre: SYDIAI, DataNimbus, Commotion, Telomere, FourKit
 
 ## Greenhouse / ATS HTTP (job-by-job, not board-skip)
 
-Fillable + location-OK India/remote DS roles this run were already applied (NewRocket India, EnCharge India, Moniepoint India Fraud) **or** asked CTC/notice/visa. FourKites Remote India Senior AI/DS needs notice or CTC. Innodata DS roles are US/Canada + salary/visa except Research DS `4404732009` (already `blocked` recaptcha, do not re-hit URL).
+OTP boards (`highmetric` / NewRocket, `enchargeai36`, `gusto`, `planetscale`, `neuralink`, `akoya`) have **no remaining fillable India/remote DS/ML**. India NewRocket + EnCharge already applied. Gusto/Neuralink are hybrid-onsite. Coinbase OTP is banned.
+
+HTTP POST with empty recaptcha token returns `428 captcha-failed` **without** `security_code_recipient` on Jumio India MLE IV (`4664041005`, `4713139005`) and Moniepoint Senior DS Credit `4808999101` — recaptcha enterprise, not Gmail OTP. Do not re-hit those URLs. Resume S3 presign works.
+
+Workable `POST /api/v1/jobs/{shortcode}/apply` returns **412 Precondition Failed** (Turnstile). Proximity Works Remote India Senior DS AdTech confirmed. Same wall for Funding Societies Delhi, Mrsool Remote India, Nacre, LUXASIA, Two95, Weekday Noida, Acclaro. Do **not** pile Turnstile tabs.
+
+Zimperium Lever `5b35759a` is India Remote AI/Python — hCaptcha; did not pile (Level AI already queued).
+
+FourKites Remote India Senior AI/DS still needs notice or CTC. Innodata Research DS `4404732009` already `blocked` recaptcha — do not re-hit.
 
 ## Models
 
