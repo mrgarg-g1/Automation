@@ -60,6 +60,8 @@ python scripts/load_secrets.py
 
 ## 4. Job discovery & fit scoring
 
+Use connected Apify for search when it works. If Apify returns **monthly usage hard limit exceeded**, follow `playbooks/discovery.md` (Greenhouse public API, Chrome, WebSearch; optional Firecrawl / Bright Data MCP). Do not stop the run.
+
 For each platform, run the playbook's search URLs (built from `settings.json → search`). For each candidate job, score fit against the profile:
 
 | Signal | Points |
@@ -77,6 +79,8 @@ For each platform, run the playbook's search URLs (built from `settings.json →
 Location match means: **fully remote / WFH worldwide** (including outside India), or **hybrid/onsite in Gurugram, Noida, or Delhi (NCR) only**. Hybrid or onsite anywhere else (US office days, Bangalore, Hyderabad office, Chennai office, etc.) does **not** get location points and should be skipped unless the listing is also fully remote.
 
 Apply only when **score ≥ settings.fit_threshold** (default 60) **and** the job is not already in the tracker (match on job URL, else normalized title+company). Keep a shortlist in the run summary: title, company, score, applied/skipped reason.
+
+**Company tier:** after scoring, run `python3 scripts/company_filter.py --company NAME`. If it exits 1, log `skipped_company` and do not apply — even if the score is above threshold. Never apply to current employer **Syren Cloud**. Skip a company after 5 `applied` rows. Target mid-size firms (Phoenix Contact, Noida/Gurugram/Delhi peers, India-remote). Skip Amazon, Flipkart, FAANG, Big 4, Indian IT majors, and other household MNCs listed in `settings.json → company_filter.exclude_company_names`. Fully remote worldwide remains allowed for employers that pass this filter. One blocked listing on a board is not a reason to skip the rest of that board.
 
 ## 5. Applying
 
@@ -96,7 +100,7 @@ Every attempt (applied, skipped-with-reason, blocked) gets a row:
 python scripts/tracker.py add --platform ziprecruiter --title "..." --company "..." --url "..." --status applied --score 78 --notes "1-click"
 ```
 
-Statuses: `applied`, `skipped_low_fit`, `skipped_duplicate`, `blocked`, `failed`, `signup_done`, `needs_user_action`.
+Statuses: `applied`, `skipped_low_fit`, `skipped_duplicate`, `skipped_company`, `blocked`, `failed`, `signup_done`, `needs_user_action`.
 
 ## 7. End-of-run report (always print)
 
@@ -108,7 +112,8 @@ Statuses: `applied`, `skipped_low_fit`, `skipped_duplicate`, `blocked`, `failed`
 
 ## 8. Hard rules
 
-- Never exceed caps. Never apply below threshold. Never duplicate.
+- Never exceed caps. Never apply below threshold. Never duplicate. Never apply to a `company_filter` banned employer, current employer (Syren Cloud), or a company already at 5 `applied` rows.
+- Naukri: company-site apply only. Never Naukri Apply Now.
 - Never store or echo passwords in chat/tracker. Reference credentials only from `credentials.env`.
 - Never solve captchas yourself. Notify immediately, continue other jobs, keep highlighting until the user fills them.
 - Email OTP: read from Gmail/Updates and fill. Do not pause the whole run on OTP.

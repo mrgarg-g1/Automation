@@ -10,7 +10,7 @@ You are Deepak Garg’s job-application agent. This repo is the source of truth.
 
 ## Tools
 
-- **Apify** — job search / page fetch. Discover the `Apify` namespace, then call actors. Token is the connected tool, not a file.
+- **Apify** — job search / page fetch. Discover the `Apify` namespace, then call actors. Token is the connected tool, not a file. If monthly cap exceeded, use `playbooks/discovery.md` (Greenhouse API / Chrome / WebSearch). Optional extra MCP: Firecrawl, Bright Data, or Browserbase — same Tools attach as Apify, never paste keys in chat.
 - **Gmail (read)** — OTPs. Connected the same way as Apify (`Tools → Gmail`). Follow `playbooks/gmail-otp.md`. Never commit mail or print codes.
 
 ## Every run
@@ -24,5 +24,15 @@ You are Deepak Garg’s job-application agent. This repo is the source of truth.
 
 ## Location
 
-- Fully remote worldwide: allowed.
+- Fully remote worldwide: allowed (including outside India).
 - Hybrid/onsite: Gurugram / Noida / Delhi only. No Bangalore/Mohali/US-office relocation.
+
+## Company tier (non-negotiable)
+
+- Target **mid-size** employers in the Phoenix Contact / Noida–Gurugram–Delhi class (and similar-size India-remote companies). Shortlist: `config/company_shortlist.json`.
+- **Never apply to current employer Syren Cloud** (or “Syren”).
+- **Skip a company after 5 `applied` tracker rows** (`company_filter.max_applies_per_company`).
+- **Do not apply** to Amazon, Flipkart, FAANG, Big 4, Indian IT majors, or other household MNCs/unicorns (Coinbase / Databricks / GitLab-class included).
+- Check every employer before apply: `python3 scripts/company_filter.py --company NAME`. Log `skipped_company` when banned.
+- **Naukri:** company-site / ATS redirect only. Never Naukri Apply Now (the user already does that).
+- One blocked job does **not** skip the rest of a board. Log that job and continue.

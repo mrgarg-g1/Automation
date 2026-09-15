@@ -2,22 +2,46 @@
 
 Clear a row only after the user confirms they completed it **or** a later run submits successfully and logs `applied`.
 
-## Captcha — ACTION NEEDED (do not solve; notify immediately; continue other jobs)
+## CAPTCHA — ACTION NEEDED NOW
 
-| Job | Company | URL | What |
-|---|---|---|---|
-| Machine Learning Engineer | Jobgether | https://jobs.lever.co/jobgether/d5ccb68f-a15c-43d7-a381-05cfced69df3 | Lever picture captcha |
-| AI Engineer FDE | Databricks | https://job-boards.greenhouse.io/databricks/jobs/8099751002 | reCAPTCHA / form not submitted |
-| Finance AI Data Scientist | Binance | https://jobs.lever.co/binance/3c553d93-1746-4e78-b6eb-b82bff5cc801 | Lever puzzle captcha (resume already uploaded earlier) |
+**Mrsool Data Scientist II** — no confirmation email. Tab still open. If the checkbox is visible, click it.
 
-## Email OTP — next run: fill from Gmail read tool (`playbooks/gmail-otp.md`)
+| Job | Company | URL |
+|---|---|---|
+| Data Scientist II | Mrsool | https://jobs.workable.com/view/mRbyeQVTnqBXQ9chnKP9te/remote-data-scientist-ii-in-india-at-mrsool |
 
-| Job | Company | URL | What |
-|---|---|---|---|
-| AI/ML Developer | NewRocket | https://job-boards.greenhouse.io/highmetric/jobs/6148059004 | Greenhouse 8-char email code; form + resume already filled 2026-09-10 |
-| Senior AI/ML Engineers (FDE) - India | NewRocket | https://job-boards.greenhouse.io/highmetric/jobs/6161076004 | Same OTP wall |
-| account login | ZipRecruiter | https://www.ziprecruiter.com/login | 6-digit email OTP historically |
+Gmail confirmed the rest of the captcha batch (ProcDNA, Funding Societies, Nacre ×2, Weekday Agentic AI, Blue Machines, D2B, Acclaro). Those tabs were closed.
 
-## Do not re-apply (already applied)
+## Daily cap
 
-See `tracker/applications.csv` status `applied`. Instahyre 2026-09-10 cap 8/8: SYDIAI, DataNimbus, Commotion, Telomere, FourKites, Nablon AI, Kahuna Labs, Zynix.AI. Also Moniepoint Data Scientist (Fraud) Greenhouse `4921127101`.
+**32/30 applied today** (captcha backlog counted after Gmail confirm). No more new applies until tomorrow.
+
+## Apify quota / alternative
+
+Still `Monthly usage hard limit exceeded`. Do **not** paste a token in chat.
+
+**Easiest:** raise the monthly spend cap in [Apify Console billing](https://console.apify.com/billing) (same connected account).
+
+**Or connect one MCP** on this automation (Tools →, same place as Apify/Gmail):
+
+1. **Firecrawl** — fetch listing pages (closest to `apify/web-fetch`)
+2. **Bright Data** — residential scrape for Naukri / ZipRecruiter / Remote.co
+3. **Browserbase** — hosted browser for Cloudflare/Akamai listing pages
+
+Until then, discovery uses Greenhouse public API + Chrome + WebSearch (`playbooks/discovery.md`). ZipRecruiter search results did load in Chrome this pass; 1-click still needs login/OTP. Daily cap is full today.
+
+## Screening (do not ask again)
+
+`profile.json`: notice 15 days; current 8 LPA INR; expected 15 LPA INR / USD 1800 per month; `requires_sponsorship` No = **India work auth only**. Skip PathAI US. Skip NK Securities until JEE/Codeforces answers exist.
+
+## Instahyre
+
+Logged in. Daily tracker cap 8 is full today.
+
+## Company policy
+
+Never Syren Cloud. Skip after 5 `applied` rows (FourKites 3, Weekday AI 4 including Agentic). Naukri = company-site only. Chrome CDP `DISPLAY=:1` — do not kill Chrome.
+
+## Models
+
+Cursor Grok / Composer only. Never Claude, GPT, Gemini, Muse, or `computerUse`.

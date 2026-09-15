@@ -159,12 +159,18 @@
   ],
   "screening_answers": {
     "work_authorization": "Authorized to work in India",
-    "requires_sponsorship": "",
-    "notice_period": "",
-    "expected_salary": "",
+    "requires_sponsorship": "No",
+    "notice_period": "15 days",
+    "expected_salary": "15 LPA INR",
+    "current_ctc": "8 LPA INR",
+    "current_ctc_inr": 800000,
+    "expected_salary_inr": 1500000,
+    "expected_salary_usd_month": 1800,
     "willing_to_relocate": "No — hybrid only in Gurugram / Noida / Delhi"
   },
   "extras": {
+    "screening_source": "Instahyre profile (logged in 2026-09-15 after password reset): current salary Rs. 8 LPA, can start 15 days after offer. expected_salary 15 LPA INR / ~USD 1800 per month. Weekday 2026-09-09 copy had notice 15 days too (salary field was mis-entered as 300000). requires_sponsorship No = India work auth only, not US work auth.",
+    "home_address": "2212, Ground Floor, Sector-2, Faridabad, Haryana 121004, India",
     "otp_handoff": "If a platform asks for email OTP, captcha, or 2FA, pause and ask the user; they will share the code. Do not mark blocked on the first OTP.",
     "publications": [
       "Reactive to Agentic: Next Gen AI Agent Transition Framework — IEEE ICAICCIT 2025",
