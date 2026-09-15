@@ -6,36 +6,40 @@ Clear a row only after the user confirms they completed it **or** a later run su
 
 User 2026-09-15: **do not stop the run on captcha.** Fill the form, leave the tab, keep applying. User will clear the whole captcha queue in one pass later.
 
+Chrome was restarted earlier this run (`/tmp/chrome-job-apply`). Captcha tabs from before that restart are gone; re-open if still batching. **Currently open:** FourKites GH 8146530; Weekday Gurugram/Noida/Delhi (Submitting…). Instahyre login tabs still up.
+
 | Job | Company | URL | What |
 |---|---|---|---|
-| AI & NLP Research Solutions Engineer | Acclaro | https://jobs.workable.com/view/uvQwufp3HmJyxRppCwvwwG/hybrid-ai-%26-nlp-research-solutions-engineer-in-noida-at-acclaro | Workable Turnstile (form filled earlier) |
-| Research Data Scientist | Innodata Inc. | https://job-boards.greenhouse.io/innodatainc/jobs/4404732009 | Greenhouse recaptcha — **tab open**, form filled |
-| Data Scientist | WorldQuant | https://job-boards.greenhouse.io/worldquant/jobs/4703128006 | Greenhouse recaptcha — **tab open**, New Delhi form filled |
-| AI Software Engineer (Python) | Zimperium | https://jobs.lever.co/zimperium/5b35759a-d445-4fcb-b255-d719330af055/apply | Lever hCaptcha — **tab open**, India Remote selected, form filled |
-| MLE IV Computer Vision | Jumio | https://job-boards.greenhouse.io/jumio/jobs/4713139005 | Greenhouse recaptcha — **tab open**; India +91 / eligibility Yes / 5+ YOE No / face Yes filled; phone still flagged too long |
-| Senior Machine Learning Engineer (Bangalore/Noida) | Level AI | https://jobs.lever.co/levelai/55ba7aee-57ff-440c-91a4-58bcafcd10a8/apply | Lever hCaptcha (Noida listed) |
-| Senior MLE - NLP (Noida) | Level AI | https://jobs.lever.co/levelai/cc04ab77-6ee3-4078-9cfd-110cda0b1438/apply | **tab open**; resume + Noida selected; Lever location autocomplete empty from this VM + hCaptcha |
-| Sr. MLE (Speech) - Noida | Level AI | https://jobs.lever.co/levelai/78ddcdbd-4bd8-4187-b7d0-38fcb39c8232/apply | **tab open**; Noida selected; same location autocomplete + hCaptcha |
-| AI/ML Developer (India remote, 2–4 YOE) | Jobgether | https://jobs.lever.co/jobgether/e3f4d59d-0456-406b-ac35-a5e7b12a7d6f/apply | **tab open**; resume + name/email/phone; pick Hyderabad in location + hCaptcha |
-| Data Scientist | ConveGenius | https://convegenius.keka.com/careers/applyjob/149252 | Keka image captcha **and** CTC/notice |
-| AI/ML Engineer | EUROPEAN DYNAMICS | https://jobs.workable.com/view/idz8Yi9JAb3NehqKnjPkgW/remote-ai%2Fml-engineer-in-athens-at-european-dynamics | Cloudflare Turnstile (old) |
-| AI Engineer | Youssef L | https://jobs.workable.com/view/oWbDXQHaTCsniQ9JzCGake/remote-ai-engineer-in-casablanca-settat-at-youssef-l | Turnstile (old) |
-| AI Engineer | Portless | https://jobs.workable.com/view/boRuEDWWy88rZ2DjiiwZy1/remote-ai-engineer-in-united-states-at-portless | Turnstile (old) |
+| Data Scientist | Weekday AI | https://jobs.workable.com/view/6dEwyfYzzMgJmDeXJpXaeQ/data-scientist-in-gurugram-at-weekday-ai | **tab open** — 8 LPA / 15 days / +91 / resume filled; Turnstile Submitting… |
+| Data Scientist | Weekday AI | https://jobs.workable.com/view/dmgXbVFH59reFLC9vp8RCw/data-scientist-in-noida-at-weekday-ai | **tab open** — same CTC fill; Turnstile Submitting… |
+| Data Scientist | Weekday AI | https://jobs.workable.com/view/1VoLPYmXTksaatQQdXbh7q/data-scientist-in-delhi-at-weekday-ai | **tab open** — same CTC fill; Turnstile Submitting… |
+| Senior Data Scientist | FourKites | https://job-boards.greenhouse.io/fourkites/jobs/8146530 | **tab open** — CTC/notice/ML answers + resume; recaptcha + phone aria-invalid |
+| AI & NLP Research Solutions Engineer | Acclaro | https://jobs.workable.com/view/uvQwufp3HmJyxRppCwvwwG/hybrid-ai-%26-nlp-research-solutions-engineer-in-noida-at-acclaro | Workable Turnstile (form filled earlier; tab may need re-open) |
+| Research Data Scientist | Innodata Inc. | https://job-boards.greenhouse.io/innodatainc/jobs/4404732009 | Greenhouse recaptcha (re-open after Chrome restart) |
+| Data Scientist | WorldQuant | https://job-boards.greenhouse.io/worldquant/jobs/4703128006 | Greenhouse recaptcha (re-open) |
+| AI Software Engineer (Python) | Zimperium | https://jobs.lever.co/zimperium/5b35759a-d445-4fcb-b255-d719330af055/apply | Lever hCaptcha (re-open) |
+| MLE IV Computer Vision | Jumio | https://job-boards.greenhouse.io/jumio/jobs/4713139005 | Greenhouse recaptcha; phone still flagged too long |
+| Senior MLE - NLP (Noida) | Level AI | https://jobs.lever.co/levelai/cc04ab77-6ee3-4078-9cfd-110cda0b1438/apply | Lever location autocomplete empty from this VM + hCaptcha |
+| Sr. MLE (Speech) - Noida | Level AI | https://jobs.lever.co/levelai/78ddcdbd-4bd8-4187-b7d0-38fcb39c8232/apply | same + hCaptcha |
+| AI/ML Developer (India remote, 2–4 YOE) | Jobgether | https://jobs.lever.co/jobgether/e3f4d59d-0456-406b-ac35-a5e7b12a7d6f/apply | pick Hyderabad in location + hCaptcha |
+| Data Scientist | ConveGenius | https://convegenius.keka.com/careers/applyjob/149252 | Keka image captcha; CTC now in profile (8 LPA / 15 LPA / 15 days) |
 
-Two95 Gurugram GenAI/AI-ML is **applied** (thank-you modal after user Turnstile). Do not re-apply.
+Two95 Gurugram GenAI/AI-ML is **applied**. i2e company-site DS is **applied** (`Application submitted successfully!`). Do not re-apply those.
 
-## Company policy (user 2026-09-15 follow-up)
+## Screening answers (filled 2026-09-15 — do not ask the user again)
 
-- Never apply to **Syren Cloud** (current employer).
-- Skip a company after **5 `applied` rows**.
-- Naukri = company-site / ATS only. Never Naukri Apply Now.
-- Do not skip an entire board because one job is blocked.
-- Shortlist: `config/company_shortlist.json` (60 companies).
-- `python3 scripts/company_filter.py --company NAME`
+`config/profile.json`:
 
-## Unanswered screening (do not invent)
+- `notice_period`: 15 days
+- `current_ctc`: 8 LPA INR (`current_ctc_inr` 800000)
+- `expected_salary`: 15 LPA INR (`expected_salary_inr` 1500000, `expected_salary_usd_month` 1800)
+- `requires_sponsorship`: No = **India work auth only**, not US work auth. Still skip PathAI US sponsorship questions.
 
-Set `profile.screening_answers.expected_salary`, `notice_period`. Until then skip CTC/notice forms:
+Source: logged-in Instahyre profile (Rs. 8 LPA, start 15 days after offer).
+
+## CTC forms still to submit (answers are in profile now)
+
+Fill from profile, then leave captcha tabs:
 
 | Job | Company | URL |
 |---|---|---|
@@ -45,53 +49,32 @@ Set `profile.screening_answers.expected_salary`, `notice_period`. Until then ski
 | Senior AI-Native Engineer | Payoneer | https://job-boards.greenhouse.io/payoneer/jobs/7431102 |
 | Data Scientist | ConveGenius | https://convegenius.keka.com/careers/applyjob/149252 |
 | Senior AI Engineer | FourKites | https://job-boards.greenhouse.io/fourkites/jobs/7981512 |
-| Senior Data Scientist | FourKites | https://job-boards.greenhouse.io/fourkites/jobs/8146530 |
-| MLE II Applied Research | PathAI | https://job-boards.greenhouse.io/pathai/jobs/8696752002 |
 | Senior AI Engineer | Nacre Capital | https://jobs.workable.com/view/tqLo3KJY51BMJrg8fQd5x6/remote-senior-ai-engineer-in-india-at-nacre-capital |
 | AI Engineer / AI Automation Specialist | Pavago | https://jobs.workable.com/view/6pTQSCLxyxucQPNBbqaGd5/remote-ai-engineer-%2F-ai-automation-specialist-in-india-at-pavago |
 | AI Engineer - Agentic AI & Automation | LUXASIA | https://jobs.workable.com/view/wgKoBPh9bL82yV8MWVSLMF/hybrid-ai-engineer---agentic-ai-%26-automation-in-delhi-at-luxasia |
 | Senior Data Scientist - Credit Risk | Funding Societies | https://jobs.workable.com/view/6LZNYpDuPXAuqsS5naTWkP/hybrid-senior-data-scientist---credit-risk-in-delhi-at-funding-societies-%7C-modalku-group |
-| Data Scientist | Weekday AI | https://jobs.workable.com/view/dmgXbVFH59reFLC9vp8RCw/data-scientist-in-noida-at-weekday-ai |
-| Data Scientist | Weekday AI | https://jobs.workable.com/view/6dEwyfYzzMgJmDeXJpXaeQ/data-scientist-in-gurugram-at-weekday-ai |
-| Data Scientist | Weekday AI | https://jobs.workable.com/view/1VoLPYmXTksaatQQdXbh7q/data-scientist-in-delhi-at-weekday-ai |
 
-Also set `profile.screening_answers.requires_sponsorship` (PathAI US work-auth questions). Until then skip PathAI.
+NK Securities also asks JEE/Codeforces — **do not invent**. PathAI US work-auth: skip.
 
-**i2e Consulting Remote DS form is filled on the live desktop** except Current CTC, Expected CTC, Notice Period: https://www.i2econsulting.com/jobs/data-scientist-sr-data-scientist — type those three and click Submit Application. User said “done” after Two95; i2e CTC fields were still empty so it was **not** submitted.
+## Instahyre (logged in this run)
 
-## Next Instahyre (login failing)
+Password recovered via Gmail reset; `INSTAHYRE_*` is in local gitignored `config/credentials.env` (same as master). Profile: current role **Data Science / Machine Learning**; NCR + WFH + anywhere India/outside; 8 LPA; 15-day notice.
 
-Chrome job pages load; Apply redirects to signup. Login still **Password you entered is incorrect**. Set `INSTAHYRE_PASSWORD` in Cloud Agent secrets. After login, apply on Instahyre 1-click **or** the company ATS from the shortlist (preferred).
+**Applied today (Application sent 2026-09-15):** M3AI DS, Bloom AI Senior AI, Shuru Sr Agentic AI, Zero to 1 AI Engineer, SquadStack.ai AI Product Engineer, Avaz AI/ML.
 
-| Job | Company | URL |
-|---|---|---|
-| Data Scientist | M3AI | https://www.instahyre.com/job-440216-data-scientist-at-m3ai-delhi-gurgaon-noida/ |
-| AI / ML Engineer | Azisly | https://www.instahyre.com/job-442377-ai-ml-engineer-at-azisly-gurgaon/ |
-| Machine Learning Engineer | ConveGenius | https://www.instahyre.com/job-435105-machine-learning-engineer-at-convegenius-noida/ |
-| Senior AI Engineer | Bloom AI | https://www.instahyre.com/job-442873-senior-ai-engineer-at-bloom-ai-delhi/ |
-| Senior AI Engineer | VerbaFlo | https://www.instahyre.com/job-439863-senior-ai-engineer-at-verbaflo-gurgaon/ |
-| Sr. Agentic AI Engineer | Shuru Technologies | https://www.instahyre.com/job-440265-sr-agentic-ai-engineer-at-shuru-technologies-mumbai-work-from-home/ |
-| AI Product Engineer | SquadStack.ai | https://www.instahyre.com/job-441903-ai-product-engineer-at-squadstack-noida/ |
-| Data Scientist | VMock | https://www.instahyre.com/job-333294-data-scientist-at-vmock-gurgaon/ |
-| Senior Data Scientist | CIMET | https://www.instahyre.com/job-419353-senior-data-scientist-at-cimet-gurgaon/ |
-| Data Scientist | Apeiro | https://www.instahyre.com/job-436361-data-scientist-at-apeiro-noida/ |
-| Data Scientist | i2e Consulting | https://www.instahyre.com/job-413191-data-scientist-at-i2e-consulting-work-from-home/ |
-| Sr. Data Scientist | Winmore | https://www.instahyre.com/job-409751-sr-data-scientist-at-winmore-work-from-home/ |
+**Already sent 2026-09-09 (logged today so we do not retry):** Azisly, CIMET.
 
-Skip already-applied Instahyre: SYDIAI, DataNimbus, Commotion, Telomere, FourKites, Nablon, Kahuna, Zynix.
+Instahyre daily_cap 8 is full for tracker-today. Next run can 1-click remaining: ConveGenius `job-435105`, VerbaFlo `job-439863`, Apeiro `job-436361`, i2e Instahyre `job-413191` (company-site already applied), Winmore `job-409751`. Skip VMock Instahyre (company-site applied). Skip Infosys/Accenture.
 
-## Greenhouse / ATS HTTP (job-by-job, not board-skip)
+Skip already-applied Instahyre: SYDIAI, DataNimbus, Commotion, Telomere, FourKites, Nablon, Kahuna, Zynix, M3AI, Bloom, Shuru, Zero to 1, SquadStack, Avaz, Azisly, CIMET.
 
-OTP boards (`highmetric` / NewRocket, `enchargeai36`, `gusto`, `planetscale`, `neuralink`, `akoya`) have **no remaining fillable India/remote DS/ML**. India NewRocket + EnCharge already applied. Gusto/Neuralink are hybrid-onsite. Coinbase OTP is banned.
+## Company policy
 
-HTTP POST with empty recaptcha token returns `428 captcha-failed` **without** `security_code_recipient` on Jumio India MLE IV (`4664041005`, `4713139005`) and Moniepoint Senior DS Credit `4808999101` — recaptcha enterprise, not Gmail OTP. Do not re-hit those URLs. Resume S3 presign works.
-
-Workable `POST /api/v1/jobs/{shortcode}/apply` returns **412 Precondition Failed** (Turnstile). Chrome fill + submit still hangs on Turnstile — leave those tabs; user will batch-solve. Same salary/CTC wall on Velsera, QuantumLoopAI, Blue Machines Delhi, D2B, Nacre Agents, Weekday Agentic. Do not invent CTC.
-
-Zimperium Lever `5b35759a` is India Remote AI/Python — hCaptcha; did not pile (Level AI already queued).
-
-FourKites Remote India Senior AI/DS still needs notice or CTC. Innodata Research DS `4404732009` already `blocked` recaptcha — do not re-hit.
+- Never apply to **Syren Cloud**.
+- Skip a company after **5 `applied` rows**.
+- Naukri = company-site / ATS only. Never Naukri Apply Now.
+- Shortlist: `config/company_shortlist.json`. `python3 scripts/company_filter.py --company NAME`
 
 ## Models
 
-Cursor Grok / Composer only. Never Claude, GPT, Gemini, Muse, or `computerUse`.
+Cursor Grok / Composer only. Never Claude, GPT, Gemini, Muse, or `computerUse`. Chrome CDP on `DISPLAY=:1`. Do not kill Chrome.
