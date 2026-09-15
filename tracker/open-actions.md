@@ -12,8 +12,11 @@ User 2026-09-15: **do not stop the run on captcha.** Fill the form, leave the ta
 | Research Data Scientist | Innodata Inc. | https://job-boards.greenhouse.io/innodatainc/jobs/4404732009 | Greenhouse recaptcha — **tab open**, form filled |
 | Data Scientist | WorldQuant | https://job-boards.greenhouse.io/worldquant/jobs/4703128006 | Greenhouse recaptcha — **tab open**, New Delhi form filled |
 | AI Software Engineer (Python) | Zimperium | https://jobs.lever.co/zimperium/5b35759a-d445-4fcb-b255-d719330af055/apply | Lever hCaptcha — **tab open**, India Remote selected, form filled |
-| MLE IV Computer Vision | Jumio | https://job-boards.greenhouse.io/jumio/jobs/4713139005 | Greenhouse recaptcha + custom dropdowns — **tab open** |
+| MLE IV Computer Vision | Jumio | https://job-boards.greenhouse.io/jumio/jobs/4713139005 | Greenhouse recaptcha — **tab open**; India +91 / eligibility Yes / 5+ YOE No / face Yes filled; phone still flagged too long |
 | Senior Machine Learning Engineer (Bangalore/Noida) | Level AI | https://jobs.lever.co/levelai/55ba7aee-57ff-440c-91a4-58bcafcd10a8/apply | Lever hCaptcha (Noida listed) |
+| Senior MLE - NLP (Noida) | Level AI | https://jobs.lever.co/levelai/cc04ab77-6ee3-4078-9cfd-110cda0b1438/apply | **tab open**; resume + Noida selected; Lever location autocomplete empty from this VM + hCaptcha |
+| Sr. MLE (Speech) - Noida | Level AI | https://jobs.lever.co/levelai/78ddcdbd-4bd8-4187-b7d0-38fcb39c8232/apply | **tab open**; Noida selected; same location autocomplete + hCaptcha |
+| AI/ML Developer (India remote, 2–4 YOE) | Jobgether | https://jobs.lever.co/jobgether/e3f4d59d-0456-406b-ac35-a5e7b12a7d6f/apply | **tab open**; resume + name/email/phone; pick Hyderabad in location + hCaptcha |
 | Data Scientist | ConveGenius | https://convegenius.keka.com/careers/applyjob/149252 | Keka image captcha **and** CTC/notice |
 | AI/ML Engineer | EUROPEAN DYNAMICS | https://jobs.workable.com/view/idz8Yi9JAb3NehqKnjPkgW/remote-ai%2Fml-engineer-in-athens-at-european-dynamics | Cloudflare Turnstile (old) |
 | AI Engineer | Youssef L | https://jobs.workable.com/view/oWbDXQHaTCsniQ9JzCGake/remote-ai-engineer-in-casablanca-settat-at-youssef-l | Turnstile (old) |
@@ -49,6 +52,8 @@ Set `profile.screening_answers.expected_salary`, `notice_period`. Until then ski
 | AI Engineer - Agentic AI & Automation | LUXASIA | https://jobs.workable.com/view/wgKoBPh9bL82yV8MWVSLMF/hybrid-ai-engineer---agentic-ai-%26-automation-in-delhi-at-luxasia |
 | Senior Data Scientist - Credit Risk | Funding Societies | https://jobs.workable.com/view/6LZNYpDuPXAuqsS5naTWkP/hybrid-senior-data-scientist---credit-risk-in-delhi-at-funding-societies-%7C-modalku-group |
 | Data Scientist | Weekday AI | https://jobs.workable.com/view/dmgXbVFH59reFLC9vp8RCw/data-scientist-in-noida-at-weekday-ai |
+| Data Scientist | Weekday AI | https://jobs.workable.com/view/6dEwyfYzzMgJmDeXJpXaeQ/data-scientist-in-gurugram-at-weekday-ai |
+| Data Scientist | Weekday AI | https://jobs.workable.com/view/1VoLPYmXTksaatQQdXbh7q/data-scientist-in-delhi-at-weekday-ai |
 
 Also set `profile.screening_answers.requires_sponsorship` (PathAI US work-auth questions). Until then skip PathAI.
 
