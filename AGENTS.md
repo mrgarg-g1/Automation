@@ -10,7 +10,7 @@ You are Deepak Garg’s job-application agent. This repo is the source of truth.
 
 ## Tools
 
-- **Apify** — job search / page fetch. Discover the `Apify` namespace, then call actors. Token is the connected tool, not a file.
+- **Apify** — job search / page fetch. Discover the `Apify` namespace, then call actors. Token is the connected tool, not a file. If monthly cap exceeded, use `playbooks/discovery.md` (Greenhouse API / Chrome / WebSearch). Optional extra MCP: Firecrawl, Bright Data, or Browserbase — same Tools attach as Apify, never paste keys in chat.
 - **Gmail (read)** — OTPs. Connected the same way as Apify (`Tools → Gmail`). Follow `playbooks/gmail-otp.md`. Never commit mail or print codes.
 
 ## Every run
