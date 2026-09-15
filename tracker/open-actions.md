@@ -4,9 +4,19 @@ Clear a row only after the user confirms they completed it **or** a later run su
 
 ## CAPTCHA — ACTION NEEDED NOW
 
-User 2026-09-15: **click the Turnstile checkbox myself** (it often completes submit). I did that this pass.
+### ProcDNA (new this pass)
 
-**This Cloud Agent Chrome still shows Cloudflare “Verification failed / Troubleshoot” — not a checkbox.** Cookie banner was accepted. Real mouse clicks on the widget did not flip it to Applied. 8 filled Workable tabs are still open on the live desktop.
+JazzHR form is filled (Gurugram Senior DS, CTC/notice from profile). Recaptcha **Human Check** is waiting.
+
+| Job | Company | URL |
+|---|---|---|
+| [India] Senior Data Scientist | ProcDNA | https://procdna.applytojob.com/apply/gFquX4vjLO/India-Senior-Data-Scientist |
+
+### Workable Turnstile (still open)
+
+User 2026-09-15: **click the Turnstile checkbox myself** (it often completes submit).
+
+**This Cloud Agent Chrome still shows Cloudflare “Verification failed / Troubleshoot” — not a checkbox.** Cookie banner was accepted. 8 filled Workable tabs are still open on the live desktop.
 
 | Job | Company | URL |
 |---|---|---|
@@ -20,6 +30,12 @@ User 2026-09-15: **click the Turnstile checkbox myself** (it often completes sub
 | AI & NLP Research Solutions Engineer | Acclaro | https://jobs.workable.com/view/uvQwufp3HmJyxRppCwvwwG/hybrid-ai-%26-nlp-research-solutions-engineer-in-noida-at-acclaro |
 
 If you see a checkbox on those tabs, click it — forms are fully filled. If you also see Verification failed, that is this VM’s Cloudflare score, not missing fields.
+
+## Apify quota (blocks ZipRecruiter + Remote.co + Naukri scrape)
+
+Apify MCP is **already connected**. This run got `Monthly usage hard limit exceeded` on `call-actor`, `apify--web-fetch`, and `apify--rag-web-browser`. Raise the **monthly usage/spend cap** in Apify Console billing for the same connected account. Do **not** paste a new token in chat.
+
+Until that cap is raised: ZipRecruiter is Cloudflare-blocked from this VM, Remote.co is Akamai Access Denied, Naukri company-site discovery has no scraper.
 
 ## Screening (do not ask again)
 
