@@ -2,6 +2,16 @@
 
 Clear a row only after the user confirms they completed it **or** a later run submits successfully and logs `applied`.
 
+## Platform pause
+
+- **Naukri:** user closed this board 2026-09-16 (`stop using naukri, shift to another`). Do not resume Naukri until the user asks. Discovery-only / company-site leftover (Macquarie Executive Data Scientist Gurugram) was not pursued.
+
+## Resume / form still blocked
+
+| Job | Company | URL | What |
+|---|---|---|---|
+| Sr. Analyst - Data Scientist | Proclink | https://proclinkconsulting.keka.com/careers/jobdetails/87682 | Keka resume parse failed (`Unable to process this file`); Apply Now stayed disabled |
+
 ## Captcha — ACTION NEEDED (do not solve; notify immediately; continue other jobs)
 
 | Job | Company | URL | What |
@@ -20,4 +30,4 @@ Clear a row only after the user confirms they completed it **or** a later run su
 
 ## Do not re-apply (already applied)
 
-See `tracker/applications.csv` status `applied`. Instahyre 2026-09-10 cap 8/8: SYDIAI, DataNimbus, Commotion, Telomere, FourKites, Nablon AI, Kahuna Labs, Zynix.AI. Also Moniepoint Data Scientist (Fraud) Greenhouse `4921127101`.
+See `tracker/applications.csv` status `applied`. Instahyre 2026-09-16 added Srijan Material Plus (DS + Senior AI Engineer), Emplay Analytics (Agentic AI), Kotak811 Applied DS (Bangalore, location miss). Prior Instahyre: SYDIAI, DataNimbus, Commotion, Telomere, FourKites, Nablon AI, Kahuna Labs, Zynix.AI, M3AI, Bloom AI, Shuru, Zero to 1, SquadStack, Avaz, Azisly, CIMET. Also Moniepoint Data Scientist (Fraud) Greenhouse `4921127101`.
